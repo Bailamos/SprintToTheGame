@@ -17,11 +17,8 @@ public class AttackRound : MonoBehaviour {
         Attack attkTemp = new Attack(Attacker, Target);
         if (listOfAttacks.Find(e => e.Attacker.Equals(Attacker)) == null)
         {
-            Attacker.transform.GetComponent<Image>().color = Color.red;
             listOfAttacks.Add(attkTemp);
-
-            Statistics zycie = attkTemp.Target.GetComponent<Statistics>();
-            bool destroyBool = zycie.attack(attkTemp.Attacker.GetComponent<Statistics>().atk);
+            Attacker.transform.GetComponent<Image>().color = Color.red;
         }
         else
         {
@@ -33,6 +30,10 @@ public class AttackRound : MonoBehaviour {
         //Debug.Log(listOfAttacks.Count);
         foreach (Attack attck in listOfAttacks)
         {
+
+
+            Statistics zycie = attck.Target.GetComponent<Statistics>();
+            bool destroyBool = zycie.attack(attck.Attacker.GetComponent<Statistics>().atk);
             attck.Attacker.transform.GetComponent<Image>().color = Color.black;   
         }
         listOfAttacks.Clear();
