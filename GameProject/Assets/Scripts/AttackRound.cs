@@ -19,6 +19,9 @@ public class AttackRound : MonoBehaviour {
         {
             Attacker.transform.GetComponent<Image>().color = Color.red;
             listOfAttacks.Add(attkTemp);
+
+            Statistics zycie = attkTemp.Target.GetComponent<Statistics>();
+            bool destroyBool = zycie.attack(attkTemp.Attacker.GetComponent<Statistics>().atk);
         }
         else
         {
@@ -30,10 +33,7 @@ public class AttackRound : MonoBehaviour {
         //Debug.Log(listOfAttacks.Count);
         foreach (Attack attck in listOfAttacks)
         {
-            Statistics zycie = attck.Target.GetComponent<Statistics>();
-            bool destroyBool = zycie.attack(attck.Attacker.GetComponent<Statistics>().atk);
-            attck.Attacker.transform.GetComponent<Image>().color = Color.black;
-            if (destroyBool) zycie.isAlive = false;       
+            attck.Attacker.transform.GetComponent<Image>().color = Color.black;   
         }
         listOfAttacks.Clear();
     }
