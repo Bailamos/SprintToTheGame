@@ -19,7 +19,7 @@ public class AttackRound : MonoBehaviour {
         listOfAttacks.Add(new Attack(Attacker, Target));
         listOfInts.Add(++liczba);
 
-        Debug.Log("dodaje atak do lsity! pojemnsoc listy atakow: " + listOfAttacks.Capacity + "poj liczb: " + listOfInts.Capacity);
+        Debug.Log("dodaje atak do lsity! pojemnsoc listy atakow: " + listOfAttacks.Capacity + ", poj liczb: " + listOfInts.Capacity);
     }
 
     public void startAttack()
