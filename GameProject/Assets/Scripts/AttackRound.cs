@@ -4,44 +4,24 @@ using System.Collections.Generic;
 
 public class AttackRound : MonoBehaviour {
 
-    List<Attack> listOfAttacks;
-    List<int> listOfInts;
-    int liczba;
+    public List<Attack> listOfAttacks;
+    public int liczbaAtakow;
 
     void Start () {
         listOfAttacks = new List<Attack>();
-        listOfInts = new List<int>();
-        liczba = 0;
+        liczbaAtakow = 0;
     }
 	
 	public void addAttack(GameObject Attacker, GameObject Target)
     {
-
-        Debug.Log("Atak: " + Attacker.name + " vs " +  Target.name);
-        Attack AtakTemp = new Attack(Attacker, Target);
-        Debug.Log(Attacker.name + " " + Target.name);
-        listOfAttacks.Add(AtakTemp);
-        Debug.Log(listOfAttacks.Count);
-
+        listOfAttacks.Add(new Attack(Attacker, Target));
+        Debug.Log("Ilosc atakow w liscie: " + listOfAttacks.Count);
+        liczbaAtakow = listOfAttacks.Count;
     }
 
     public void startAttack()
     {
-        Debug.Log("Zaczynam Atak!");
-
-        for (int i = 0; i < listOfAttacks.Count; i++)
-        {
-            Debug.Log("petla dziala! razy: " + i+1);
-            Statistics zycie = listOfAttacks[i].Target.GetComponent<Statistics>();
-            bool destroyBool = zycie.attack(listOfAttacks[i].Attacker.GetComponent<Statistics>().atk);
-
-            if (destroyBool) zycie.isAlive = false;
-        }
-
-        foreach (int number in listOfInts)
-        {
-            Debug.Log(number);
-        }
+        Debug.Log("Zaczynam Atak!" + listOfAttacks.Count);
 
         foreach (Attack attck in listOfAttacks)
         {
