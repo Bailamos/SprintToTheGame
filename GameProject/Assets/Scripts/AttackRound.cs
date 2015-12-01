@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
 using System.Collections.Generic;
 
@@ -13,16 +14,25 @@ public class AttackRound : MonoBehaviour {
 	
 	public void addAttack(GameObject Attacker, GameObject Target)
     {
-        listOfAttacks.Add(new Attack(Attacker, Target));
+        Attack attkTemp = new Attack(Attacker, Target);
+        if (listOfAttacks.Find(e => e.Attacker.Equals(Attacker)) == null)
+        {
+            Attacker.transform.GetComponent<Image>().color = Color.red;
+            listOfAttacks.Add(attkTemp);
+        }
+        else
+        {
+            Debug.Log("Dana jednostka już atakuje kogoś!");
+        }
     }
 
     public void startAttack() {
-        Debug.Log(listOfAttacks.Count);
+        //Debug.Log(listOfAttacks.Count);
         foreach (Attack attck in listOfAttacks)
         {
             Statistics zycie = attck.Target.GetComponent<Statistics>();
             bool destroyBool = zycie.attack(attck.Attacker.GetComponent<Statistics>().atk);
-
+            attck.Attacker.transform.GetComponent<Image>().color = Color.black;
             if (destroyBool) zycie.isAlive = false;       
         }
         listOfAttacks.Clear();

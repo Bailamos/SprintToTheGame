@@ -10,15 +10,21 @@ public class DropCard : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
         Card Attacker = eventData.pointerDrag.GetComponent<Card>();
         Card Target = this.GetComponent<Card>();
 
-        Debug.Log("Walka: Atakujacy---> " + Attacker.name + " Target---> "+ Target.name);
+        Debug.Log("Walka: Atakujacy---> " + Attacker.name + " Target---> " + Target.name);
         GameObject gameWorld = GameObject.Find("GameWorld");
-        gameWorld.GetComponent<AttackRound>().addAttack(Attacker.gameObject, Target.gameObject); // add new planned Attack when player drop his Card on enemy Card
+
+
+        if (isAttackPossible(Attacker, Target))
+        {
+            gameWorld.GetComponent<AttackRound>().addAttack(Attacker.gameObject, Target.gameObject); // add new planned Attack when player drop his Card on enemy Card
+        }
+
     }
 
     public void OnPointerEnter(PointerEventData eventData)
     {
         //Debug.Log(gameObject.name);
-        
+
     }
 
     public void OnPointerExit(PointerEventData eventData)
@@ -26,8 +32,17 @@ public class DropCard : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
         //Debug.Log(this.gameObject.name);
     }
 
-    void Update()
-    { 
-        
+    private bool isAttackPossible(Card Attacker, Card Target)
+    {
+        if (!(Attacker.parentToReturnTo.Equals(GameObject.Find("Hand").transform)))
+        {
+            if (!(Attacker.properties.type == Properties.typy.Melee && Target.properties.type == Properties.typy.Archers))
+            {
+                return true;
+            }
+            Debug.Log("Melee nie mogą atakować Archerów!");
+        }
+        Debug.Log("Nie można atakować z ręki!");
+        return false;
     }
 }
