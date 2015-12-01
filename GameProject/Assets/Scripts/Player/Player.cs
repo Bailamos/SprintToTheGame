@@ -19,6 +19,8 @@ public class Player : MonoBehaviour {
             zasoby.like += 1;
             zasoby.tweet += 1;
             zasoby.snap += 1;
+
+            Debug.Log("Adding +1 to all of Mana !");
         }
     
     }

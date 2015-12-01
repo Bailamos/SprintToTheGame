@@ -24,7 +24,6 @@ public class DeckScript : MonoBehaviour {
             nCard.GetComponent<Properties>().type = Properties.typy.Archers;
 
             Text Title;
-
             Transform TitleTrans = nCard.transform.Find("TitleImage").transform.Find("Title") ;
             Title = TitleTrans.GetComponentInChildren<Text>();
             Title.text = "TytulKarty";
@@ -49,11 +48,10 @@ public class DeckScript : MonoBehaviour {
             Tweet = TweetTrans.GetComponentInChildren<Text>();
             Tweet.text = nCard.GetComponent<Resources>().snap.ToString();
 
-            Debug.Log("Dodaje karte " + nCard.GetComponent<Statistics>().hp);
+            var gameWorld = GameObject.Find("GameWorld");
+            nCard.GetComponent<Properties>().CardId = gameWorld.GetComponent<AssignID>().giveID();
 
-         
-     
-            
+            //Debug.Log("Dodaje karte " + nCard.GetComponent<Statistics>().hp);
         }
 
 

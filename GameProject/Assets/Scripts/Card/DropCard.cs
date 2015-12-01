@@ -4,16 +4,15 @@ using System.Collections;
 
 public class DropCard : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IDropHandler
 {
-    bool destroyBool = false;
     //HetlthScript zycie;
     public void OnDrop(PointerEventData eventData)
     {
-        Debug.Log(gameObject.name);
-        Card d = eventData.pointerDrag.GetComponent<Card>();
-        Card a = this.GetComponent<Card>();
-        Debug.Log("Walka: " + d.name +"  "+ a.name);
-        Statistics zycie = gameObject.GetComponent<Statistics>();
-        destroyBool = zycie.attack(d.GetComponent<Statistics>().atk);
+        Card Attacker = eventData.pointerDrag.GetComponent<Card>();
+        Card Target = this.GetComponent<Card>();
+        Debug.Log("Walka: Atakujacy---> " + Attacker.name + " Target---> "+ Target.name);
+
+        var gameWorld = GameObject.Find("GameWorld");
+        gameWorld.GetComponent<AttackRound>().addAttack(Attacker.gameObject, Target.gameObject); // add new planned Attack when player drop his Card on enemy Card
     }
 
     public void OnPointerEnter(PointerEventData eventData)
@@ -29,10 +28,6 @@ public class DropCard : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 
     void Update()
     { 
-        if (destroyBool)
-        {
-            Debug.Log("Niszcze: " + this.gameObject.name);
-            Destroy(this.gameObject);
-        }
+        
     }
 }

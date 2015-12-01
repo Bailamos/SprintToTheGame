@@ -55,8 +55,6 @@ public class Card : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHand
         {
             this.transform.SetParent(parentToReturnTo);
             GetComponent<CanvasGroup>().blocksRaycasts = true;
-
-            //Debug.Log("KONCZE CIAGNAC");
         }
     }
 
@@ -69,9 +67,13 @@ public class Card : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHand
         return this.properties;
     }
 
+    public int getID()
+    {
+        return this.properties.CardId;
+    }
+
     public void Update()
     {
-        //Description.text = "hahaha";
         Description.text = "Att: " + statistics.atk.ToString() +  "Def: " + statistics.hp.ToString();
     }
 }
