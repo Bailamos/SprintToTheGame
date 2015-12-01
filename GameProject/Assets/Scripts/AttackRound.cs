@@ -16,17 +16,20 @@ public class AttackRound : MonoBehaviour {
 	
 	public void addAttack(GameObject Attacker, GameObject Target)
     {
-        listOfAttacks.Add(new Attack(Attacker, Target));
-        listOfInts.Add(++liczba);
 
-        Debug.Log("dodaje atak do lsity! pojemnsoc listy atakow: " + listOfAttacks.Capacity + ", poj liczb: " + listOfInts.Capacity);
+        Debug.Log("Atak: " + Attacker.name + " vs " +  Target.name);
+        Attack AtakTemp = new Attack(Attacker, Target);
+        Debug.Log(Attacker.name + " " + Target.name);
+        listOfAttacks.Add(AtakTemp);
+        Debug.Log(listOfAttacks.Count);
+
     }
 
     public void startAttack()
     {
         Debug.Log("Zaczynam Atak!");
 
-        for(int i = 0; i < listOfAttacks.Capacity; i++)
+        for (int i = 0; i < listOfAttacks.Count; i++)
         {
             Debug.Log("petla dziala! razy: " + i+1);
             Statistics zycie = listOfAttacks[i].Target.GetComponent<Statistics>();
@@ -49,6 +52,6 @@ public class AttackRound : MonoBehaviour {
             if (destroyBool) zycie.isAlive = false;       
         }
 
-        Debug.Log("Koniec Ataku!" +  " pojemnsoc listy: " + listOfAttacks.Capacity);
+        Debug.Log("Koniec Ataku!" + " pojemnsoc listy: " + listOfAttacks.Count);
     }
 }

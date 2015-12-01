@@ -9,9 +9,9 @@ public class DropCard : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
     {
         Card Attacker = eventData.pointerDrag.GetComponent<Card>();
         Card Target = this.GetComponent<Card>();
-        Debug.Log("Walka: Atakujacy---> " + Attacker.name + " Target---> "+ Target.name);
 
-        var gameWorld = GameObject.Find("GameWorld");
+        Debug.Log("Walka: Atakujacy---> " + Attacker.name + " Target---> "+ Target.name);
+        GameObject gameWorld = GameObject.Find("GameWorld");
         gameWorld.GetComponent<AttackRound>().addAttack(Attacker.gameObject, Target.gameObject); // add new planned Attack when player drop his Card on enemy Card
     }
 
