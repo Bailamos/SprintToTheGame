@@ -28,7 +28,7 @@ public class DragZone : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
         }
     }
 
-    public bool checkIfEnoughResources(Resources player, Resources karta)
+    public bool checkIfEnoughResources(CardResources player, CardResources karta)
     {
         if (player.like >= karta.like && player.snap >= karta.snap && player.tweet >= karta.tweet)
         {
@@ -39,7 +39,7 @@ public class DragZone : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
             return false;
         }
     }
-    public void drainResources(Resources player, Resources karta)
+    public void drainResources(CardResources player, CardResources karta)
     {
         player.like -= karta.like;
         player.snap -= karta.snap;

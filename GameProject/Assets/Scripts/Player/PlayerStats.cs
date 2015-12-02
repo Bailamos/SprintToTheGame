@@ -4,12 +4,12 @@ using UnityEngine.UI;
 
 public class PlayerStats : MonoBehaviour {
 
-    Resources zasoby;
+    CardResources zasoby;
     Text textStats;
 
     void Start () {
         var player = GameObject.Find("Gracz");
-        zasoby = player.GetComponent<Resources>();
+        zasoby = player.GetComponent<CardResources>();
         textStats = this.GetComponentInChildren<Text>();
     }
 	

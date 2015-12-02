@@ -3,10 +3,10 @@ using System.Collections;
 
 public class Player : MonoBehaviour {
 
-    Resources zasoby;
+    CardResources zasoby;
 
 	void Start () {
-        zasoby = gameObject.GetComponent<Resources>();
+        zasoby = gameObject.GetComponent<CardResources>();
         zasoby.like = 0;
         zasoby.tweet = 0;
         zasoby.snap = 0;
@@ -24,7 +24,7 @@ public class Player : MonoBehaviour {
         }
     
     }
-    public Resources getResources()
+    public CardResources getResources()
     {
         return zasoby;
     }

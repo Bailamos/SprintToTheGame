@@ -8,7 +8,7 @@ using System.Collections.Generic;
 public class Card : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler
 {
     public Transform parentToReturnTo = null;
-    public Resources zasoby;
+    public CardResources zasoby;
     public Properties properties;
     public Statistics statistics;
 
@@ -18,7 +18,7 @@ public class Card : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHand
     public Text defenseText;
 
     public void Start(){
-        zasoby = gameObject.GetComponent<Resources>();
+        zasoby = gameObject.GetComponent<CardResources>();
         properties = gameObject.GetComponent<Properties>();
         statistics = gameObject.GetComponent<Statistics>();
 
@@ -58,7 +58,7 @@ public class Card : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHand
         }
     }
 
-    public Resources getResources()
+    public CardResources getResources()
     {
         return this.zasoby;
     }

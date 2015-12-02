@@ -34,9 +34,9 @@ public class DeckScript : MonoBehaviour
                 nCard.transform.SetParent(panel.transform, false);
                 nCard.GetComponent<Statistics>().hp = a.obrona;
                 nCard.GetComponent<Statistics>().atk = a.atak;
-                nCard.GetComponent<Resources>().like = 1;
-                nCard.GetComponent<Resources>().tweet = 2;
-                nCard.GetComponent<Resources>().snap = 1;
+                nCard.GetComponent<CardResources>().like = 1;
+                nCard.GetComponent<CardResources>().tweet = 2;
+                nCard.GetComponent<CardResources>().snap = 1;
                 nCard.GetComponent<Properties>().isEnemy = false;
                 nCard.GetComponent<Properties>().type = Properties.typy.Archers;
 
@@ -53,17 +53,17 @@ public class DeckScript : MonoBehaviour
                 Text Like;
                 Transform LikeTrans = nCard.transform.Find("BottomPanel").transform.Find("LikeText"); ;
                 Like = LikeTrans.GetComponentInChildren<Text>();
-                Like.text = nCard.GetComponent<Resources>().like.ToString();
+                Like.text = nCard.GetComponent<CardResources>().like.ToString();
 
                 Text Snap;
                 Transform SnapTrans = nCard.transform.Find("BottomPanel").transform.Find("SnapText"); ;
                 Snap = SnapTrans.GetComponentInChildren<Text>();
-                Snap.text = nCard.GetComponent<Resources>().tweet.ToString();
+                Snap.text = nCard.GetComponent<CardResources>().tweet.ToString();
 
                 Text Tweet;
                 Transform TweetTrans = nCard.transform.Find("BottomPanel").transform.Find("TweetText"); ;
                 Tweet = TweetTrans.GetComponentInChildren<Text>();
-                Tweet.text = nCard.GetComponent<Resources>().snap.ToString();
+                Tweet.text = nCard.GetComponent<CardResources>().snap.ToString();
 
                 if (File.Exists(filePath + "\\Tekstury\\blondyna.jpeg"))
                 {
