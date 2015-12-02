@@ -41,27 +41,27 @@ public class DeckScript : MonoBehaviour
                 nCard.GetComponent<Properties>().type = Properties.typy.Archers;
 
                 Text Title;
-                Transform TitleTrans = nCard.transform.Find("CardImage").transform.Find("Text");
+                Transform TitleTrans = nCard.transform.Find("UpperPanel").transform.Find("TitleImage").transform.Find("Text");
                 Title = TitleTrans.GetComponentInChildren<Text>();
                 Title.text = a.nazwa;
 
-                Text Description;
-                Transform DescriptionTrans = nCard.transform.Find("Description");
-                Description = DescriptionTrans.GetComponentInChildren<Text>();
-                Description.text = "l: " + nCard.GetComponent<Resources>().like + " t: " + nCard.GetComponent<Resources>().tweet + " s: " + nCard.GetComponent<Resources>().snap;
+                //Text Description;
+                //Transform DescriptionTrans = nCard.transform.Find("Description");
+                //Description = DescriptionTrans.GetComponentInChildren<Text>();
+                //Description.text = "l: " + nCard.GetComponent<Resources>().like + " t: " + nCard.GetComponent<Resources>().tweet + " s: " + nCard.GetComponent<Resources>().snap;
 
                 Text Like;
-                Transform LikeTrans = nCard.transform.Find("TitleImage").transform.Find("Panel").transform.Find("LikesText"); ;
+                Transform LikeTrans = nCard.transform.Find("BottomPanel").transform.Find("LikeText"); ;
                 Like = LikeTrans.GetComponentInChildren<Text>();
                 Like.text = nCard.GetComponent<Resources>().like.ToString();
 
                 Text Snap;
-                Transform SnapTrans = nCard.transform.Find("TitleImage").transform.Find("Panel").transform.Find("SnapText"); ;
+                Transform SnapTrans = nCard.transform.Find("BottomPanel").transform.Find("SnapText"); ;
                 Snap = SnapTrans.GetComponentInChildren<Text>();
                 Snap.text = nCard.GetComponent<Resources>().tweet.ToString();
 
                 Text Tweet;
-                Transform TweetTrans = nCard.transform.Find("TitleImage").transform.Find("Panel").transform.Find("TweetText"); ;
+                Transform TweetTrans = nCard.transform.Find("BottomPanel").transform.Find("TweetText"); ;
                 Tweet = TweetTrans.GetComponentInChildren<Text>();
                 Tweet.text = nCard.GetComponent<Resources>().snap.ToString();
 

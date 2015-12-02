@@ -6,9 +6,13 @@ using System.Collections.Generic;
 public class AttackRound : MonoBehaviour {
 
     public List<Attack> listOfAttacks;
+    int numberOfPanel; // number of Panel in Planned Attacks, which is needed in assigning Fight to Panel
+    public List<AttackPanel> panelAttakcs;
 
     void Start () {
         listOfAttacks = new List<Attack>();
+        panelAttakcs = new List<AttackPanel>();
+        numberOfPanel = 1;
     }
 	
 	public void addAttack(GameObject Attacker, GameObject Target)
@@ -16,9 +20,9 @@ public class AttackRound : MonoBehaviour {
         Attack attkTemp = new Attack(Attacker, Target);
         if (listOfAttacks.Find(e => e.Attacker.Equals(Attacker)) == null)
         {
+            setAttackImages(Attacker, Target);
             listOfAttacks.Add(attkTemp);
-            Attacker.transform.GetComponent<Image>().color = Color.red;
-            setAttackImages(Attacker, Target, listOfAttacks.Count);
+            Attacker.transform.GetComponent<Image>().color = Color.red;    
         }
         else
         {
@@ -36,7 +40,9 @@ public class AttackRound : MonoBehaviour {
             if (destroyBool) zycie.isAlive = false;
         }
         listOfAttacks.Clear();
+        panelAttakcs.Clear();
         clearAttackPanel();
+        numberOfPanel = 1;
     }
 
     private void clearAttackPanel()
@@ -56,26 +62,46 @@ public class AttackRound : MonoBehaviour {
         }  
     }
 
-    private void setAttackImages(GameObject Attacker, GameObject Target, int numberOfAttack)
+    private void setAttackImages(GameObject Attacker, GameObject Target)
     {
-        var panel = GameObject.Find("Panel" + numberOfAttack).transform.Find("Card1"); //wyciagniecie paneli
-        var panel2 = GameObject.Find("Panel" + numberOfAttack).transform.Find("Card2");
+        bool isTargetUnderAttack = false;
+        GameObject panel;
 
-        GameObject AttackerImage = Attacker.transform.Find("CardImage").gameObject; // wyciagniecie zdjec
-        GameObject TargetImage = Target.transform.Find("CardImage").gameObject;
+        if (listOfAttacks.Find(e => e.Target.Equals(Target)) != null) //is this creature under attack ?
+        {
+            isTargetUnderAttack = true;
 
-        GameObject miniCard2 = Instantiate(TargetImage); // nowe instancje
-        miniCard2.transform.SetParent(panel2.transform, false);
+            int tmpPanelNumber = panelAttakcs.Find(t => t.Target.Equals(Target)).panelNumber;
+            panel = GameObject.Find("Panel" + tmpPanelNumber);
+        }
+        else
+        {
+            panel = GameObject.Find("Panel" + numberOfPanel); //wyciagniecie paneli
+            panelAttakcs.Add(new AttackPanel(Attacker, Target, numberOfPanel));
+        }
 
-        GameObject miniCard = Instantiate(AttackerImage);
-        miniCard.transform.SetParent(panel.transform, false);
+        var card1 = panel.transform.Find("Card1");
 
-        var children = new List<GameObject>(); // usuniecie napisow
-        foreach (Transform child in miniCard2.transform) children.Add(child.gameObject);
+        Image attackerImage = Attacker.transform.Find("CardImage").gameObject.GetComponent<Image>(); // wyciagniecie zdjec
+        Image miniImage = Instantiate(attackerImage); // nowe instancje
+        miniImage.transform.SetParent(card1.transform, false); // dodanie rodzica
+
+        var children = new List<GameObject>(); // usuniecie napisow --------- do usuniecia jak nie bedzie napisu w zdjeciu  
+        foreach (Transform child in miniImage.transform) children.Add(child.gameObject);
         children.ForEach(child => Destroy(child));
 
-        children.Clear();
-        foreach (Transform child in miniCard.transform) children.Add(child.gameObject);
-        children.ForEach(child => Destroy(child));
+        if (!isTargetUnderAttack)
+        {
+            var card2 = panel.transform.Find("Card2");
+            Image TargetImage = Target.transform.Find("CardImage").gameObject.GetComponent<Image>();
+            Image miniImage2 = Instantiate(TargetImage);
+            miniImage2.transform.SetParent(card2.transform, false);
+
+            children.Clear();
+            foreach (Transform child in miniImage2.transform) children.Add(child.gameObject);
+            children.ForEach(child => Destroy(child));
+
+            numberOfPanel++;
+        }
     }
 }

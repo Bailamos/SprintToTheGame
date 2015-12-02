@@ -14,20 +14,20 @@ public class Card : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHand
 
     public Text Title;
     public Text Description;
+    public Text attackText;
+    public Text defenseText;
 
     public void Start(){
         zasoby = gameObject.GetComponent<Resources>();
         properties = gameObject.GetComponent<Properties>();
         statistics = gameObject.GetComponent<Statistics>();
 
-        //Transform TitleTrans = this.transform.Find("TitleImage").gameObject.transform.Find("Title").gameObject.transform;
-        //Title = TitleTrans.GetComponentInChildren<Text>();
-        //Debug.Log(Title.text);
-        //Title.text = "a: " + statistics.atk.ToString() + " d: " + statistics.hp.ToString();
-     
-        Transform DescriptionTrans = this.transform.Find("Description");
-        Description = DescriptionTrans.GetComponentInChildren<Text>();
-        //Description.text = "Koszt: l" + zasoby.like + " t: " + zasoby.tweet +  " s: " + zasoby.snap;
+        //Transform DescriptionTrans = this.transform.Find("Description");
+        Transform attackTextTrans = this.transform.Find("Attack").transform.Find("Text");
+        attackText = attackTextTrans.GetComponentInChildren<Text>();
+
+        Transform defeseTextTrans = this.transform.Find("Defense").transform.Find("Text");
+        defenseText = defeseTextTrans.GetComponentInChildren<Text>();
     }
     public void OnBeginDrag(PointerEventData eventData)
     {
@@ -74,6 +74,7 @@ public class Card : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHand
 
     public void Update()
     {
-        Description.text = "Att: " + statistics.atk.ToString() +  "Def: " + statistics.hp.ToString();
+        defenseText.text = statistics.hp.ToString();
+        attackText.text = statistics.atk.ToString();
     }
 }
