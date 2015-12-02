@@ -14,4 +14,9 @@ public class AssignID : MonoBehaviour {
     {
         return ++worldID;
     }
+
+    public void lel()
+    {
+        Destroy(GameObject.Find("PomyslKarty"));
+    }
 }

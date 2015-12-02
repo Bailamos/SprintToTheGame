@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Xml;
 using System.Collections;
 using System.IO;
+using UnityEngine.UI;
 
 public class LoadCards : MonoBehaviour
 {
@@ -22,13 +23,14 @@ public class LoadCards : MonoBehaviour
 
     public List<cardProperties> Deck;
 
-
     // Use this for initialization
     void Start()
     {
         string filePath = Application.dataPath;
+
         Deck = new List<cardProperties>();
         XmlDocument doc = new XmlDocument();
+
         if (File.Exists(filePath + "\\XML\\karty.xml"))
         {
             doc.Load(filePath + "\\XML\\karty.xml");
