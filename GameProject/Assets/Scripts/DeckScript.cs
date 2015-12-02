@@ -25,7 +25,7 @@ public class DeckScript : MonoBehaviour
         {
             string filePath = Application.dataPath;
 
-            if (GetComponent<LoadCards>().Deck.Count != 0)
+            if (GetComponent<LoadCards>().Deck.Count != 0 )
             {
                 LoadCards.cardProperties a = GetComponent<LoadCards>().Deck[0];
 
