@@ -13,5 +13,5 @@ public class AssignID : MonoBehaviour {
     public int giveID()
     {
         return ++worldID;
-    }
+    } 
 }
