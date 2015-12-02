@@ -18,6 +18,7 @@ public class AttackRound : MonoBehaviour {
         {
             listOfAttacks.Add(attkTemp);
             Attacker.transform.GetComponent<Image>().color = Color.red;
+            setAttackImages(Attacker, Target, listOfAttacks.Count);
         }
         else
         {
@@ -53,5 +54,28 @@ public class AttackRound : MonoBehaviour {
             foreach (Transform child in panel2) children.Add(child.gameObject);
             children.ForEach(child => Destroy(child));
         }  
+    }
+
+    private void setAttackImages(GameObject Attacker, GameObject Target, int numberOfAttack)
+    {
+        var panel = GameObject.Find("Panel" + numberOfAttack).transform.Find("Card1"); //wyciagniecie paneli
+        var panel2 = GameObject.Find("Panel" + numberOfAttack).transform.Find("Card2");
+
+        GameObject AttackerImage = Attacker.transform.Find("CardImage").gameObject; // wyciagniecie zdjec
+        GameObject TargetImage = Target.transform.Find("CardImage").gameObject;
+
+        GameObject miniCard2 = Instantiate(TargetImage); // nowe instancje
+        miniCard2.transform.SetParent(panel2.transform, false);
+
+        GameObject miniCard = Instantiate(AttackerImage);
+        miniCard.transform.SetParent(panel.transform, false);
+
+        var children = new List<GameObject>(); // usuniecie napisow
+        foreach (Transform child in miniCard2.transform) children.Add(child.gameObject);
+        children.ForEach(child => Destroy(child));
+
+        children.Clear();
+        foreach (Transform child in miniCard.transform) children.Add(child.gameObject);
+        children.ForEach(child => Destroy(child));
     }
 }
