@@ -13,10 +13,5 @@ public class AssignID : MonoBehaviour {
     public int giveID()
     {
         return ++worldID;
-    }
-
-    public void lel()
-    {
-        Destroy(GameObject.Find("PomyslKarty"));
-    }
+    } 
 }
