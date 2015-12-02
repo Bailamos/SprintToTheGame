@@ -5,7 +5,7 @@ using System.Collections;
 using System;
 using System.Collections.Generic;
 
-public class Card : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler
+public class Card : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler, IPointerEnterHandler, IPointerExitHandler
 {
     public Transform parentToReturnTo = null;
     public CardResources zasoby;
@@ -16,6 +16,9 @@ public class Card : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHand
     public Text Description;
     public Text attackText;
     public Text defenseText;
+    public Text descriptionText;
+    public GameObject DescriptionImage;
+
 
     public void Start(){
         zasoby = gameObject.GetComponent<CardResources>();
@@ -28,6 +31,19 @@ public class Card : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHand
 
         Transform defeseTextTrans = this.transform.Find("Defense").transform.Find("Text");
         defenseText = defeseTextTrans.GetComponentInChildren<Text>();
+
+
+        DescriptionImage = this.transform.Find("DescriptionPanel").gameObject;
+
+        descriptionText = DescriptionImage.GetComponentInChildren<Text>();
+        descriptionText.text = "OPIS";
+
+        DescriptionImage.SetActive(false);
+
+       
+        //descriptionText = DescriptionImage.GetComponentInChildren<Text>();
+        //descriptionText.text = "OPIS";
+
     }
     public void OnBeginDrag(PointerEventData eventData)
     {
@@ -76,5 +92,15 @@ public class Card : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHand
     {
         defenseText.text = statistics.hp.ToString();
         attackText.text = statistics.atk.ToString();
+    }
+
+    public void OnPointerExit(PointerEventData eventData)
+    {
+        DescriptionImage.SetActive(false);
+    }
+
+    public void OnPointerEnter(PointerEventData eventData)
+    {
+        DescriptionImage.SetActive(true);
     }
 }
