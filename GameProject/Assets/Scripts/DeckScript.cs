@@ -23,9 +23,7 @@ public class DeckScript : MonoBehaviour
         var panel = GameObject.Find("Hand");
         if (panel != null)
         {
-
             string filePath = Application.dataPath;
-
 
             if (GetComponent<LoadCards>().Deck.Count != 0)
             {
@@ -37,12 +35,12 @@ public class DeckScript : MonoBehaviour
                 nCard.GetComponent<Statistics>().atk = a.atak;
                 nCard.GetComponent<Resources>().like = 1;
                 nCard.GetComponent<Resources>().tweet = 2;
-                nCard.GetComponent<Resources>().snap = 3;
+                nCard.GetComponent<Resources>().snap = 1;
                 nCard.GetComponent<Properties>().isEnemy = false;
                 nCard.GetComponent<Properties>().type = Properties.typy.Archers;
 
                 Text Title;
-                Transform TitleTrans = nCard.transform.Find("Image").transform.Find("Text");
+                Transform TitleTrans = nCard.transform.Find("CardImage").transform.Find("Text");
                 Title = TitleTrans.GetComponentInChildren<Text>();
                 Title.text = a.nazwa;
 
@@ -72,7 +70,7 @@ public class DeckScript : MonoBehaviour
                     Texture2D texture = new Texture2D(64, 64, TextureFormat.ARGB32, false);
                     texture.LoadImage(data);
                     Sprite s = Sprite.Create(texture, new Rect(0, 0, texture.width, texture.height), new Vector2(0.5f, 0.5f));
-                    nCard.transform.Find("Image").GetComponent<Image>().sprite = s;
+                    nCard.transform.Find("CardImage").GetComponent<Image>().sprite = s;
                 }
 
                 var gameWorld = GameObject.Find("GameWorld");

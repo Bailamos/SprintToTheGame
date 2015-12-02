@@ -9,4 +9,24 @@
 		<Atak>5</Atak>
 		<Obrona>2</Obrona>
 	</Card>
+  <Card>
+		<Title>Szymon</Title>
+		<Atak>5</Atak>
+		<Obrona>2</Obrona>
+	</Card>
+  <Card>
+		<Title>Maciek</Title>
+		<Atak>5</Atak>
+		<Obrona>2</Obrona>
+	</Card>
+  <Card>
+		<Title>Majkel</Title>
+		<Atak>5</Atak>
+		<Obrona>2</Obrona>
+	</Card>
+  <Card>
+		<Title>Tom</Title>
+		<Atak>5</Atak>
+		<Obrona>2</Obrona>
+	</Card>
 </Cards>
