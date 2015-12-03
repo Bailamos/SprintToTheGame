@@ -19,15 +19,20 @@ public class Player : MonoBehaviour {
             zasoby.like += 1;
             zasoby.tweet += 1;
             zasoby.snap += 1;
-
+            PhotonView photonView = PhotonView.Get(this);
+            photonView.RPC("ChatMessage", PhotonTargets.All, "jup", "and jup!");
             Debug.Log("Adding +1 to all of Mana !");
         }
+  
     
     }
     public CardResources getResources()
     {
         return zasoby;
     }
-
-
+    [PunRPC]
+    void ChatMessage(string a, string b)
+    {
+        Debug.Log("ChatMessage " + a + " " + b);
+    }
 }

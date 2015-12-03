@@ -3,10 +3,15 @@ using System.Collections.Generic;
 using System.Xml;
 using System.Collections;
 using System.IO;
+using System.Xml.Serialization;
 using UnityEngine.UI;
+using System;
+
+
 
 public class LoadCards : MonoBehaviour
 {
+
     public class cardProperties
     {
         public string nazwa;
