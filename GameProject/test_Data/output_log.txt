@@ -19,20 +19,20 @@ Loading C:\Users\Maciek\Desktop\CompetitonGame2\GameProject\test_Data\Managed\Un
 Platform assembly: C:\Users\Maciek\Desktop\CompetitonGame2\GameProject\test_Data\Managed\Photon3Unity3D.dll (this message is harmless)
 Loading C:\Users\Maciek\Desktop\CompetitonGame2\GameProject\test_Data\Managed\Photon3Unity3D.dll into Unity Child Domain
 Platform assembly: C:\Users\Maciek\Desktop\CompetitonGame2\GameProject\test_Data\Managed\System.Core.dll (this message is harmless)
-- Completed reload, in  0.064 seconds
+- Completed reload, in  0.057 seconds
 desktop: 1920x1080 60Hz; virtual: 1920x1080 at 0,0
 <RI> Initializing input.
 <RI> Input initialized.
 <RI> Initialized touch support.
 Platform assembly: C:\Users\Maciek\Desktop\CompetitonGame2\GameProject\test_Data\Managed\System.dll (this message is harmless)
 Setting up 2 worker threads for Enlighten.
-  Thread -> id: 1ee8 -> priority: 1 
-  Thread -> id: 1c28 -> priority: 1 
+  Thread -> id: 2a14 -> priority: 1 
+  Thread -> id: 24ac -> priority: 1 
 Unloading 3 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 5.575659 ms
+UnloadTime: 8.231935 ms
 
-Unloading 2 unused Assets to reduce memory usage. Loaded Objects now: 571.
-Total: 0.686227 ms (FindLiveObjects: 0.107762 ms CreateObjectMapping: 0.107295 ms MarkObjects: 0.463238 ms  DeleteObjects: 0.006064 ms)
+Unloading 2 unused Assets to reduce memory usage. Loaded Objects now: 577.
+Total: 0.682495 ms (FindLiveObjects: 0.133420 ms CreateObjectMapping: 0.036853 ms MarkObjects: 0.504291 ms  DeleteObjects: 0.006531 ms)
 
 Platform assembly: C:\Users\Maciek\Desktop\CompetitonGame2\GameProject\test_Data\Managed\System.Xml.dll (this message is harmless)
 Przeciwnik dołączył
@@ -63,15 +63,27 @@ Nazwa: PomyslKarty(Clone) Id: 3
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
 
+Adding +1 to all of Mana !
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+Adding +1 to all of Mana !
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+Adding +1 to all of Mana !
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+Adding +1 to all of Mana !
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
 Nazwa: PomyslKarty(Clone) Id: 4
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
 
 Nazwa: PomyslKarty(Clone) Id: 5
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
-
-Nazwa: PomyslKarty(Clone) Id: 6
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
 

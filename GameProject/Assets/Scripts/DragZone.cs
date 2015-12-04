@@ -70,5 +70,6 @@ public class DragZone : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 
         GameObject x = gameWorld.GetComponent<AssignID>().allCards.Find(card => card.GetComponent<Properties>().CardId.Equals(cardID));
         x.transform.SetParent(panel.transform, true);
+        x.transform.Find("BackOfCard").gameObject.SetActive(false);
     }
 }

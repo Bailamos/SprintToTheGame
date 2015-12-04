@@ -41,8 +41,6 @@ public class DeckScript : MonoBehaviour
             {
                 Debug.Log("KONIEC GRY, PRZEGRAŁEŚ");
             }
-
-            //Debug.Log("Dodaje karte " + nCard.GetComponent<Statistics>().hp);
         }
     }
 
@@ -62,7 +60,10 @@ public class DeckScript : MonoBehaviour
      {
          string filePath = Application.dataPath;
 
-         nCard.transform.SetParent(panel.transform, false);
+        if(tisEnemy) nCard.transform.Find("BackOfCard").gameObject.SetActive(true);
+        else nCard.transform.Find("BackOfCard").gameObject.SetActive(false);
+
+        nCard.transform.SetParent(panel.transform, false);
          nCard.GetComponent<Statistics>().hp = a.obrona;
          nCard.GetComponent<Statistics>().atk = a.atak;
          nCard.GetComponent<CardResources>().like = a.like;
