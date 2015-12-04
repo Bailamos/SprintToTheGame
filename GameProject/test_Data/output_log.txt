@@ -1,48 +1,39 @@
 Initialize engine version: 5.2.3f1 (f3d16a1fa2dd)
 GfxDevice: creating device client; threaded=1
 Direct3D:
-    Version:  Direct3D 11.0 [level 10.1]
-    Renderer: Intel(R) HD Graphics Family (ID=0x116)
-    Vendor:   Intel
-    VRAM:     128 MB
+    Version:  Direct3D 11.0 [level 11.0]
+    Renderer: NVIDIA GeForce GTX 465 (ID=0x6c4)
+    Vendor:   NVIDIA
+    VRAM:     979 MB
 Begin MonoManager ReloadAssembly
-Platform assembly: C:\Users\Maciek\Desktop\CompetitonGame2\GameProject\test_Data\Managed\UnityEngine.dll (this message is harmless)
-Loading C:\Users\Maciek\Desktop\CompetitonGame2\GameProject\test_Data\Managed\UnityEngine.dll into Unity Child Domain
-Platform assembly: C:\Users\Maciek\Desktop\CompetitonGame2\GameProject\test_Data\Managed\Assembly-CSharp-firstpass.dll (this message is harmless)
-Loading C:\Users\Maciek\Desktop\CompetitonGame2\GameProject\test_Data\Managed\Assembly-CSharp-firstpass.dll into Unity Child Domain
-Platform assembly: C:\Users\Maciek\Desktop\CompetitonGame2\GameProject\test_Data\Managed\Assembly-CSharp.dll (this message is harmless)
-Loading C:\Users\Maciek\Desktop\CompetitonGame2\GameProject\test_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
-Platform assembly: C:\Users\Maciek\Desktop\CompetitonGame2\GameProject\test_Data\Managed\UnityEngine.UI.dll (this message is harmless)
-Loading C:\Users\Maciek\Desktop\CompetitonGame2\GameProject\test_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
-Platform assembly: C:\Users\Maciek\Desktop\CompetitonGame2\GameProject\test_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
-Loading C:\Users\Maciek\Desktop\CompetitonGame2\GameProject\test_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
-Platform assembly: C:\Users\Maciek\Desktop\CompetitonGame2\GameProject\test_Data\Managed\Photon3Unity3D.dll (this message is harmless)
-Loading C:\Users\Maciek\Desktop\CompetitonGame2\GameProject\test_Data\Managed\Photon3Unity3D.dll into Unity Child Domain
-Platform assembly: C:\Users\Maciek\Desktop\CompetitonGame2\GameProject\test_Data\Managed\System.Core.dll (this message is harmless)
-- Completed reload, in  0.056 seconds
-desktop: 1920x1080 60Hz; virtual: 1920x1080 at 0,0
+Platform assembly: D:\Git\CompetitonGame2\GameProject\test_Data\Managed\UnityEngine.dll (this message is harmless)
+Loading D:\Git\CompetitonGame2\GameProject\test_Data\Managed\UnityEngine.dll into Unity Child Domain
+Platform assembly: D:\Git\CompetitonGame2\GameProject\test_Data\Managed\Assembly-CSharp-firstpass.dll (this message is harmless)
+Loading D:\Git\CompetitonGame2\GameProject\test_Data\Managed\Assembly-CSharp-firstpass.dll into Unity Child Domain
+Platform assembly: D:\Git\CompetitonGame2\GameProject\test_Data\Managed\Assembly-CSharp.dll (this message is harmless)
+Loading D:\Git\CompetitonGame2\GameProject\test_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
+Platform assembly: D:\Git\CompetitonGame2\GameProject\test_Data\Managed\UnityEngine.UI.dll (this message is harmless)
+Loading D:\Git\CompetitonGame2\GameProject\test_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
+Platform assembly: D:\Git\CompetitonGame2\GameProject\test_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
+Loading D:\Git\CompetitonGame2\GameProject\test_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
+Platform assembly: D:\Git\CompetitonGame2\GameProject\test_Data\Managed\Photon3Unity3D.dll (this message is harmless)
+Loading D:\Git\CompetitonGame2\GameProject\test_Data\Managed\Photon3Unity3D.dll into Unity Child Domain
+Platform assembly: D:\Git\CompetitonGame2\GameProject\test_Data\Managed\System.Core.dll (this message is harmless)
+- Completed reload, in  0.079 seconds
+desktop: 1680x1050 59Hz; virtual: 3600x1080 at 0,0
 <RI> Initializing input.
 <RI> Input initialized.
 <RI> Initialized touch support.
-Platform assembly: C:\Users\Maciek\Desktop\CompetitonGame2\GameProject\test_Data\Managed\System.dll (this message is harmless)
-Setting up 2 worker threads for Enlighten.
-  Thread -> id: 2c34 -> priority: 1 
-  Thread -> id: 283c -> priority: 1 
+Platform assembly: D:\Git\CompetitonGame2\GameProject\test_Data\Managed\System.dll (this message is harmless)
+Setting up 1 worker threads for Enlighten.
+  Thread -> id: 1694 -> priority: 1 
 Unloading 3 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 5.369439 ms
+UnloadTime: 6.718914 ms
 
 Unloading 2 unused Assets to reduce memory usage. Loaded Objects now: 564.
-Total: 0.487961 ms (FindLiveObjects: 0.087702 ms CreateObjectMapping: 0.041985 ms MarkObjects: 0.352209 ms  DeleteObjects: 0.004665 ms)
+Total: 0.617034 ms (FindLiveObjects: 0.056173 ms CreateObjectMapping: 0.037302 ms MarkObjects: 0.510830 ms  DeleteObjects: 0.011410 ms)
 
-Platform assembly: C:\Users\Maciek\Desktop\CompetitonGame2\GameProject\test_Data\Managed\System.Xml.dll (this message is harmless)
-Operation failed: OperationResponse 225: ReturnCode: 32760 (No match found). Parameters: {}
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
-
-Drafting Card
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
-
+Platform assembly: D:\Git\CompetitonGame2\GameProject\test_Data\Managed\System.Xml.dll (this message is harmless)
 Nazwa: PomyslKarty(Clone) Id: 1
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
@@ -51,31 +42,51 @@ Nazwa: PomyslKarty(Clone) Id: 2
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
 
+Adding +1 to all of Mana !
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+Adding +1 to all of Mana !
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+Adding +1 to all of Mana !
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+Adding +1 to all of Mana !
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+Adding +1 to all of Mana !
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+Drafting Card
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
 Nazwa: PomyslKarty(Clone) Id: 3
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
 
-Nazwa: PomyslKarty(Clone) Id: 4
+Walka: Atakujacy---> PomyslKarty(Clone) Target---> Enemy
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
 
-Nazwa: PomyslKarty(Clone) Id: 5
+Walka: Atakujacy---> PomyslKarty(Clone) Target---> Enemy
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
 
-Nazwa: PomyslKarty(Clone) Id: 6
+Walka: Atakujacy---> PomyslKarty(Clone) Target---> PomyslKarty(Clone)
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
 
-Nazwa: PomyslKarty(Clone) Id: 7
+Walka: Atakujacy---> PomyslKarty(Clone) Target---> PomyslKarty(Clone)
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
 
-Nazwa: PomyslKarty(Clone) Id: 8
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
-
-Nazwa: PomyslKarty(Clone) Id: 9
+Niszcze: PomyslKarty(Clone)
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
 
