@@ -43,6 +43,7 @@ public class AttackRound : MonoBehaviour
             photonView.RPC("sendStartAttack", PhotonTargets.Others);
             attack();
             GameObject.Find("Player").GetComponent<whoseTurn>().isMyTurn = false;
+            GameObject.Find("Gracz").GetComponent<Player>().alreadyDraftedCard = false;
 
             Transform panel = GameObject.Find("Canvas").transform.FindChild("Waiting");
             panel.GetComponent<Text>().text = "TURA PRZECIWNIKA";

@@ -26,6 +26,7 @@ public class DragZone : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
                     if (checkIfEnoughResources(player.getResources(), d.getResources()))
                     {
                         drainResources(player.getResources(), d.getResources());
+                        GameObject.Find("Gracz").GetComponent<Player>().cardsInHand--;
                         d.parentToReturnTo = this.transform;
 
                         PhotonView photonView = PhotonView.Get(this);

@@ -17,41 +17,60 @@ public class DeckScript : MonoBehaviour
         int obrona;
     }
     public GameObject b;
+    Transform infoPanel;
     //public Transform cardPrefab;
 
     public void draftCard()
     {
         if (GameObject.Find("Player").GetComponent<whoseTurn>().isMyTurn) // is my Turn ?
         {
-            Debug.Log("Drafting Card");
-
-            var panel = GameObject.Find("Hand");
-            if (panel != null)
+            if (GameObject.Find("Gracz").GetComponent<Player>().cardsInHand < 7)
             {
-                if (GetComponent<LoadCards>().Deck.Count != 0)
+                if (GameObject.Find("Gracz").GetComponent<Player>().alreadyDraftedCard == false)
                 {
-                    LoadCards.cardProperties a = GetComponent<LoadCards>().Deck[0];
-                    GameObject nCard = (GameObject)PhotonNetwork.Instantiate("PomyslKarty", Vector2.zero, Quaternion.identity, 0);
-                    initCard(panel, nCard, a, false);
+                    Debug.Log("Drafting Card");
 
-                    GetComponent<LoadCards>().Deck.RemoveAt(0);
+                    var panel = GameObject.Find("Hand");
+                    if (panel != null)
+                    {
+                        if (GetComponent<LoadCards>().Deck.Count != 0)
+                        {
+                            LoadCards.cardProperties a = GetComponent<LoadCards>().Deck[0];
+                            GameObject nCard = (GameObject)PhotonNetwork.Instantiate("PomyslKarty", Vector2.zero, Quaternion.identity, 0);
+                            initCard(panel, nCard, a, false);
+                            GameObject.Find("Gracz").GetComponent<Player>().cardsInHand++;
 
-                    PhotonView photonView = PhotonView.Get(this);
-                    photonView.RPC("AddCard", PhotonTargets.Others, a.nazwa, a.atak, a.obrona, a.like, a.tweet, a.snap, true, a.opis, a.typ);
+                            GetComponent<LoadCards>().Deck.RemoveAt(0);
+
+                            PhotonView photonView = PhotonView.Get(this);
+                            photonView.RPC("AddCard", PhotonTargets.Others, a.nazwa, a.atak, a.obrona, a.like, a.tweet, a.snap, true, a.opis, a.typ);
+                        }
+                        else
+                        {
+                            Debug.Log("KONIEC GRY, PRZEGRAŁEŚ");
+                        }
+                    }    
                 }
                 else
                 {
-                    Debug.Log("KONIEC GRY, PRZEGRAŁEŚ");
+                    infoPanel.GetComponent<Text>().text = "DOBRALES JUZ KARTE!";
                 }
+            }
+            else
+            {
+                infoPanel.GetComponent<Text>().text = "MAX. ILOSC KART TO 7!";
             }
         }
         else
         {
-            Transform panel = GameObject.Find("Canvas").transform.FindChild("Waiting");
-            panel.GetComponent<Text>().text = "Nie twoja tura !";
+            infoPanel.GetComponent<Text>().text = "Nie twoja tura !";
         }
     }
 
+    public void changeDrafetedState()
+    {
+        GameObject.Find("Gracz").GetComponent<Player>().alreadyDraftedCard = true;
+    }
 
     [PunRPC]
     void AddCard(string nazwa, int atak, int obrona, int like, int tweet, int snap, bool isEnemy, string opis,string typ)
@@ -67,6 +86,7 @@ public class DeckScript : MonoBehaviour
 
     void Start()
     {
+        infoPanel = GameObject.Find("Canvas").transform.FindChild("Waiting");
         Transform panel = GameObject.Find("Canvas").transform.FindChild("WinOrLose");
         panel.gameObject.SetActive(false);
     }
