@@ -3,26 +3,28 @@ using UnityEngine.UI;
 using System.Collections;
 using System.Collections.Generic;
 
-public class AttackRound : MonoBehaviour {
+public class AttackRound : MonoBehaviour
+{
 
     public List<Attack> listOfAttacks;
     int numberOfPanel; // number of Panel in Planned Attacks, which is needed in assigning Fight to Panel
     public List<AttackPanel> panelAttakcs;
 
-    void Start () {
+    void Start()
+    {
         listOfAttacks = new List<Attack>();
         panelAttakcs = new List<AttackPanel>();
         numberOfPanel = 1;
     }
-	
-	public void addAttack(GameObject Attacker, GameObject Target)
+
+    public void addAttack(GameObject Attacker, GameObject Target)
     {
         Attack attkTemp = new Attack(Attacker, Target);
         if (listOfAttacks.Find(e => e.Attacker.Equals(Attacker)) == null)
         {
             setAttackImages(Attacker, Target);
             listOfAttacks.Add(attkTemp);
-            Attacker.transform.GetComponent<Image>().color = Color.red;    
+            Attacker.transform.GetComponent<Image>().color = Color.red;
         }
         else
         {
@@ -35,7 +37,7 @@ public class AttackRound : MonoBehaviour {
         PhotonView photonView = PhotonView.Get(this);
         photonView.RPC("sendStartAttack", PhotonTargets.Others);
         attack();
-        
+
     }
 
     [PunRPC]
@@ -48,10 +50,12 @@ public class AttackRound : MonoBehaviour {
         foreach (Attack attck in listOfAttacks)
         {
             Statistics zycie = attck.Target.GetComponent<Statistics>();
+
             bool destroyBool = zycie.attack(attck.Attacker.GetComponent<Statistics>().atk);
+            if (destroyBool) zycie.isAlive = false;
+
             attck.Attacker.transform.GetComponent<Image>().color = Color.black;
 
-            if (destroyBool) zycie.isAlive = false;
         }
 
         listOfAttacks.Clear();
@@ -62,7 +66,7 @@ public class AttackRound : MonoBehaviour {
 
     private void clearAttackPanel()
     {
-        for(int i=1; i <= 5; i++)
+        for (int i = 1; i <= 5; i++)
         {
             Transform panel = GameObject.Find("Panel" + i).transform.Find("Card1").transform;
             Transform panel2 = GameObject.Find("Panel" + i).transform.Find("Card2").transform;
@@ -74,7 +78,7 @@ public class AttackRound : MonoBehaviour {
 
             foreach (Transform child in panel2) children.Add(child.gameObject);
             children.ForEach(child => Destroy(child));
-        }  
+        }
     }
 
     private void setAttackImages(GameObject Attacker, GameObject Target)
@@ -108,8 +112,13 @@ public class AttackRound : MonoBehaviour {
         if (!isTargetUnderAttack)
         {
             var card2 = panel.transform.Find("Card2");
-            Image TargetImage = Target.transform.Find("CardImage").gameObject.GetComponent<Image>();
-            Image miniImage2 = Instantiate(TargetImage);
+            Image TargetImage;
+            Image miniImage2;
+            Debug.Log(card2.name);
+            TargetImage = Target.transform.Find("CardImage").gameObject.GetComponent<Image>();
+            miniImage2 = Instantiate(TargetImage);
+
+
             miniImage2.transform.SetParent(card2.transform, false);
 
             children.Clear();

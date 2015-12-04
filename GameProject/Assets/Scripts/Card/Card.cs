@@ -36,7 +36,7 @@ public class Card : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHand
         DescriptionImage = this.transform.Find("DescriptionPanel").gameObject;
 
         descriptionText = DescriptionImage.GetComponentInChildren<Text>();
-        descriptionText.text = "OPIS";
+        descriptionText.text = properties.description;
 
         DescriptionImage.SetActive(false);
 

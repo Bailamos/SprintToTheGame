@@ -30,12 +30,12 @@ public class DeckScript : MonoBehaviour
             {
                 LoadCards.cardProperties a = GetComponent<LoadCards>().Deck[0];
                 GameObject nCard = (GameObject)PhotonNetwork.Instantiate("PomyslKarty", Vector2.zero, Quaternion.identity,0);
-                initCard(panel, nCard,a,1,1,1,false,"Archers");
+                initCard(panel, nCard,a,false);
 
                 GetComponent<LoadCards>().Deck.RemoveAt(0);
 
                 PhotonView photonView = PhotonView.Get(this);
-                photonView.RPC("AddCard", PhotonTargets.Others, a.nazwa, a.atak.ToString(), a.obrona.ToString(), nCard.GetComponent<CardResources>().like, nCard.GetComponent<CardResources>().tweet, nCard.GetComponent<CardResources>().snap,true,"Archers");
+                photonView.RPC("AddCard", PhotonTargets.Others, a.nazwa,a.atak,a.obrona,a.like,a.tweet,a.snap,true,a.opis,a.typ);
             }
             else
             {
@@ -48,28 +48,28 @@ public class DeckScript : MonoBehaviour
 
 
     [PunRPC]
-    void AddCard(string nazwa, string atak, string obrona, int like, int tweet, int snap, bool isEnemy, string typ)
+    void AddCard(string nazwa, int atak, int obrona, int like, int tweet, int snap, bool isEnemy, string opis,string typ)
     {
         GameObject panel = GameObject.Find("EnemiesHand");
         if (panel != null)
         {
-            LoadCards.cardProperties cp = new LoadCards.cardProperties(nazwa, atak, obrona);
+            LoadCards.cardProperties cp = new LoadCards.cardProperties(nazwa, atak.ToString(), obrona.ToString(), like.ToString(), tweet.ToString(), snap.ToString(), opis, typ);
             GameObject nCard = (GameObject)PhotonNetwork.Instantiate("PomyslKarty", Vector2.zero, Quaternion.identity, 0);
-            initCard(panel, nCard, cp,like,tweet,snap,isEnemy,typ);
+            initCard(panel, nCard, cp,isEnemy);
         }
     }
-    public void initCard(GameObject panel, GameObject nCard, LoadCards.cardProperties a, int tlike, int ttweet, int tsnap, bool tisEnemy, string ttyp)
+    public void initCard(GameObject panel, GameObject nCard, LoadCards.cardProperties a,  bool tisEnemy)
      {
          string filePath = Application.dataPath;
 
          nCard.transform.SetParent(panel.transform, false);
          nCard.GetComponent<Statistics>().hp = a.obrona;
          nCard.GetComponent<Statistics>().atk = a.atak;
-         nCard.GetComponent<CardResources>().like = tlike;
-         nCard.GetComponent<CardResources>().tweet = ttweet;
-         nCard.GetComponent<CardResources>().snap = tsnap;
+         nCard.GetComponent<CardResources>().like = a.like;
+         nCard.GetComponent<CardResources>().tweet = a.tweet;
+         nCard.GetComponent<CardResources>().snap = a.snap;
          nCard.GetComponent<Properties>().isEnemy = tisEnemy;
-         if (ttyp.Equals("Archers"))
+         if (a.typ.Equals("Archer"))
          {
              nCard.GetComponent<Properties>().type = Properties.typy.Archers;
          }
@@ -89,31 +89,48 @@ public class DeckScript : MonoBehaviour
          //Description.text = "l: " + nCard.GetComponent<Resources>().like + " t: " + nCard.GetComponent<Resources>().tweet + " s: " + nCard.GetComponent<Resources>().snap;
 
          Text Like;
-         Transform LikeTrans = nCard.transform.Find("BottomPanel").transform.Find("LikeText"); ;
+         Transform LikeTrans = nCard.transform.Find("BottomPanel").transform.Find("LikeText");
          Like = LikeTrans.GetComponentInChildren<Text>();
          Like.text = nCard.GetComponent<CardResources>().like.ToString();
 
          Text Snap;
-         Transform SnapTrans = nCard.transform.Find("BottomPanel").transform.Find("SnapText"); ;
+         Transform SnapTrans = nCard.transform.Find("BottomPanel").transform.Find("SnapText");
          Snap = SnapTrans.GetComponentInChildren<Text>();
          Snap.text = nCard.GetComponent<CardResources>().tweet.ToString();
 
          Text Tweet;
-         Transform TweetTrans = nCard.transform.Find("BottomPanel").transform.Find("TweetText"); ;
+         Transform TweetTrans = nCard.transform.Find("BottomPanel").transform.Find("TweetText");
          Tweet = TweetTrans.GetComponentInChildren<Text>();
          Tweet.text = nCard.GetComponent<CardResources>().snap.ToString();
 
-         if (File.Exists(filePath + "\\Tekstury\\blondyna.jpeg"))
+         nCard.GetComponent<Properties>().description = a.opis + "\n Typ: " + a.typ.ToString();
+        
+
+      
+        
+
+         if (File.Exists(filePath + "\\Tekstury\\" + a.nazwa + ".jpg"))
          {
-             byte[] data = File.ReadAllBytes(Application.dataPath + "\\Tekstury\\blondyna.jpeg");
+             byte[] data = File.ReadAllBytes(Application.dataPath + "\\Tekstury\\" + a.nazwa + ".jpg");
+             Texture2D texture = new Texture2D(64, 64, TextureFormat.ARGB32, false);
+             texture.LoadImage(data);
+             Sprite s = Sprite.Create(texture, new Rect(0, 0, texture.width, texture.height), new Vector2(0.5f, 0.5f));
+             nCard.transform.Find("CardImage").GetComponent<Image>().sprite = s;
+         }
+         else
+         {
+             byte[] data = File.ReadAllBytes(Application.dataPath + "\\Tekstury\\tmp.jpg");
              Texture2D texture = new Texture2D(64, 64, TextureFormat.ARGB32, false);
              texture.LoadImage(data);
              Sprite s = Sprite.Create(texture, new Rect(0, 0, texture.width, texture.height), new Vector2(0.5f, 0.5f));
              nCard.transform.Find("CardImage").GetComponent<Image>().sprite = s;
          }
 
+
         GameObject panelToReturn = GameObject.Find("Hand");
         nCard.GetComponent<Card>().parentToReturnTo = panelToReturn.transform;
+
+
 
         // Assign ID to card
         var gameWorld = GameObject.Find("GameWorld"); 

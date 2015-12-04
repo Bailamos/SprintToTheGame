@@ -7,5 +7,6 @@ public class Properties : MonoBehaviour {
     public bool isEnemy;
     public int CardId;
     public typy type;
+    public string description;
 
 }

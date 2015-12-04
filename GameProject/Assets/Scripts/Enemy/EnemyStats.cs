@@ -4,7 +4,7 @@ using UnityEngine.UI;
 
 public class EnemyStats : MonoBehaviour {
 
-    public int like, snap, tweet;
+    public int like, snap, tweet, life;
     Text textStats;
 
     public void addMana(int l, int s, int t)
@@ -23,12 +23,13 @@ public class EnemyStats : MonoBehaviour {
 
     void Start()
     {
-        like = snap = tweet = 0;
+        like = snap = tweet = Const.startMana;
+        life = Const.life;
         textStats = this.GetComponentInChildren<Text>();
     }
 
     void Update()
     {
-        textStats.text = "Likes: " + like.ToString() + "\nTweets: " + tweet.ToString() + "\nSnaps: " + snap.ToString();
+        textStats.text = "Life: " + life.ToString() + "\nLikes: " + like.ToString() + "\nTweets: " + tweet.ToString() + "\nSnaps: " + snap.ToString();
     }
 }
