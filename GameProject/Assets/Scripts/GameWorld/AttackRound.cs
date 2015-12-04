@@ -34,7 +34,17 @@ public class AttackRound : MonoBehaviour {
     {
         PhotonView photonView = PhotonView.Get(this);
         photonView.RPC("sendStartAttack", PhotonTargets.Others);
+        attack();
+        
+    }
 
+    [PunRPC]
+    void sendStartAttack()
+    {
+        attack();
+    }
+    private void attack()
+    {
         foreach (Attack attck in listOfAttacks)
         {
             Statistics zycie = attck.Target.GetComponent<Statistics>();
@@ -48,12 +58,6 @@ public class AttackRound : MonoBehaviour {
         panelAttakcs.Clear();
         clearAttackPanel();
         numberOfPanel = 1;
-    }
-
-    [PunRPC]
-    void sendStartAttack()
-    {
-        startAttack();
     }
 
     private void clearAttackPanel()

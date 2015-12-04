@@ -29,7 +29,7 @@ public class DeckScript : MonoBehaviour
             if (GetComponent<LoadCards>().Deck.Count != 0 )
             {
                 LoadCards.cardProperties a = GetComponent<LoadCards>().Deck[0];
-                GameObject nCard = (GameObject)Instantiate(b);
+                GameObject nCard = (GameObject)PhotonNetwork.Instantiate("PomyslKarty", Vector2.zero, Quaternion.identity,0);
                 initCard(panel, nCard,a,1,1,1,false,"Archers");
 
                 GetComponent<LoadCards>().Deck.RemoveAt(0);
@@ -54,7 +54,7 @@ public class DeckScript : MonoBehaviour
         if (panel != null)
         {
             LoadCards.cardProperties cp = new LoadCards.cardProperties(nazwa, atak, obrona);
-            GameObject nCard = (GameObject)Instantiate(b);
+            GameObject nCard = (GameObject)PhotonNetwork.Instantiate("PomyslKarty", Vector2.zero, Quaternion.identity, 0);
             initCard(panel, nCard, cp,like,tweet,snap,isEnemy,typ);
         }
     }
@@ -77,7 +77,7 @@ public class DeckScript : MonoBehaviour
          {
              nCard.GetComponent<Properties>().type = Properties.typy.Melee;
          }
-
+        
          Text Title;
          Transform TitleTrans = nCard.transform.Find("UpperPanel").transform.Find("TitleImage").transform.Find("Text");
          Title = TitleTrans.GetComponentInChildren<Text>();
