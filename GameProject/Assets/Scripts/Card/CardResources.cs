@@ -5,8 +5,6 @@ public class CardResources : MonoBehaviour {
 
     public int like, snap, tweet;
 
-
-
     public void drainResources(int l, int s, int t){
         if ( checkIfEnough(l,s,t)){
             this.like -= l;

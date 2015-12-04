@@ -7,23 +7,18 @@ public class Player : MonoBehaviour {
 
 	void Start () {
         zasoby = gameObject.GetComponent<CardResources>();
-        zasoby.like = 0;
-        zasoby.tweet = 0;
-        zasoby.snap = 0;
-	}
+        zasoby.like = Const.startMana;
+        zasoby.tweet = Const.startMana;
+        zasoby.snap = Const.startMana;
+    }
 
-    void Update()
+    public void addMana()
     {
-        if (Input.GetKeyDown("space"))
-        {
-            zasoby.like += 1;
-            zasoby.tweet += 1;
-            zasoby.snap += 1;
-            PhotonView photonView = PhotonView.Get(this);
-            photonView.RPC("updateMana", PhotonTargets.Others, 1, 1 ,1);
-
-            Debug.Log("Adding +1 to all of Mana !");
-        }
+        zasoby.like += 2;
+        zasoby.tweet += 2;
+        zasoby.snap += 2;
+        PhotonView photonView = PhotonView.Get(this);
+        photonView.RPC("updateMana", PhotonTargets.Others, 2, 2 ,2);
     }
 
     public CardResources getResources()

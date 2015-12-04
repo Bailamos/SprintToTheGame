@@ -35,6 +35,8 @@ public class AttackRound : MonoBehaviour
 
     public void startAttack()
     {
+        Debug.Log("dasd");
+
         if (GameObject.Find("Player").GetComponent<whoseTurn>().isMyTurn) // is my Turn ?
         {
             PhotonView photonView = PhotonView.Get(this);
@@ -44,6 +46,8 @@ public class AttackRound : MonoBehaviour
 
             Transform panel = GameObject.Find("Canvas").transform.FindChild("Waiting");
             panel.GetComponent<Text>().text = "TURA PRZECIWNIKA";
+
+            GameObject.Find("Gracz").GetComponent<Player>().addMana();
         }
         else
         {
@@ -64,10 +68,14 @@ public class AttackRound : MonoBehaviour
     {
         foreach (Attack attck in listOfAttacks)
         {
-            Statistics zycie = attck.Target.GetComponent<Statistics>();
+            Statistics zycieTarget = attck.Target.GetComponent<Statistics>();
+            Statistics zycieAttacker = attck.Attacker.GetComponent<Statistics>();
 
-            bool destroyBool = zycie.attack(attck.Attacker.GetComponent<Statistics>().atk);
-            if (destroyBool) zycie.isAlive = false;
+            bool destroyBool = zycieTarget.attack(attck.Attacker.GetComponent<Statistics>().atk);
+            if (destroyBool) zycieTarget.isAlive = false;
+
+            bool destroyBool2 = zycieAttacker.attack(attck.Target.GetComponent<Statistics>().atk);
+            if (destroyBool2) zycieAttacker.isAlive = false;
 
             attck.Attacker.transform.GetComponent<Image>().color = Color.black;
         }

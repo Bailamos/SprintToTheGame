@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
 
 public class Statistics : MonoBehaviour {
 
@@ -11,7 +12,7 @@ public class Statistics : MonoBehaviour {
     public bool attack(int dmg)
     {
         hp -= dmg;
-        if(hp < 0) return true;
+        if(hp <= 0) return true;
         return false;
     }
 
@@ -34,8 +35,30 @@ public class Statistics : MonoBehaviour {
             }
             else
             {
-                Debug.Log("Przegales!");
+                if (GameObject.Find("Gracz").GetComponent<Statistics>().hp <= 0)
+                {
+                    Transform panel = GameObject.Find("Canvas").transform.FindChild("Waiting");
+                    panel.GetComponent<Text>().text = "PRZEGRALES!";
+
+                    Transform panel2 = GameObject.Find("Canvas").transform.FindChild("WinOrLose");
+                    panel2.gameObject.SetActive(true);
+                    panel2.GetComponent<Text>().text = "JESTES PRZEGRANYM!";
+
+                    PhotonView photonView = PhotonView.Get(this);
+                    photonView.RPC("winMessage", PhotonTargets.Others);
+                }
             }
         }
+    }
+
+    [PunRPC]
+    void winMessage()
+    {
+        Transform panel = GameObject.Find("Canvas").transform.FindChild("Waiting");
+        panel.GetComponent<Text>().text = "WYGRALES!";
+
+        Transform panel2 = GameObject.Find("Canvas").transform.FindChild("WinOrLose");
+        panel2.gameObject.SetActive(true);
+        panel2.GetComponent<Text>().text = "JESTES ZWYCIEZCA!";
     }
 }

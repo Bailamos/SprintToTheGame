@@ -64,6 +64,13 @@ public class DeckScript : MonoBehaviour
             initCard(panel, nCard, cp,isEnemy);
         }
     }
+
+    void Start()
+    {
+        Transform panel = GameObject.Find("Canvas").transform.FindChild("WinOrLose");
+        panel.gameObject.SetActive(false);
+    }
+
     public void initCard(GameObject panel, GameObject nCard, LoadCards.cardProperties a,  bool tisEnemy)
      {
          string filePath = Application.dataPath;
@@ -115,9 +122,6 @@ public class DeckScript : MonoBehaviour
         nCard.GetComponent<Properties>().description = a.opis + "\n Typ: " + a.typ.ToString();
         
 
-      
-        
-
          if (File.Exists(filePath + "\\Tekstury\\" + a.nazwa + ".jpg"))
          {
              byte[] data = File.ReadAllBytes(Application.dataPath + "\\Tekstury\\" + a.nazwa + ".jpg");
@@ -138,8 +142,6 @@ public class DeckScript : MonoBehaviour
 
         GameObject panelToReturn = GameObject.Find("Hand");
         nCard.GetComponent<Card>().parentToReturnTo = panelToReturn.transform;
-
-
 
         // Assign ID to card
         var gameWorld = GameObject.Find("GameWorld"); 

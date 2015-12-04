@@ -32,9 +32,7 @@ public class NetworkManagment : MonoBehaviour {
         PhotonNetwork.Instantiate("Player", Vector2.zero, Quaternion.identity, 0);
 
         PhotonView photonView = PhotonView.Get(this);
-        photonView.RPC("Connected", PhotonTargets.Others);
-
-     
+        photonView.RPC("Connected", PhotonTargets.Others); 
     }
 
     [PunRPC]
@@ -47,6 +45,7 @@ public class NetworkManagment : MonoBehaviour {
         photonView.RPC("Potwierdz", PhotonTargets.Others);
 
         GameObject.Find("Player").GetComponent<whoseTurn>().isMyTurn = true; // Turn belongs to player who connetcted first
+        for(int i = 0; i < 5; i++) GameObject.Find("EventSystem").GetComponent<DeckScript>().draftCard();
         //panel.gameObject.SetActive(false);
     }
     [PunRPC]
@@ -54,6 +53,11 @@ public class NetworkManagment : MonoBehaviour {
     {
         Transform panel = GameObject.Find("Canvas").transform.FindChild("Waiting");
         panel.GetComponent<Text>().text = "Potwierdzam";
+
+        GameObject.Find("Player").GetComponent<whoseTurn>().isMyTurn = true;
+        for (int i = 0; i < 5; i++) GameObject.Find("EventSystem").GetComponent<DeckScript>().draftCard();
+        GameObject.Find("Player").GetComponent<whoseTurn>().isMyTurn = false;
+
         Debug.Log("Przeciwnik dołączył");
         //panel.gameObject.SetActive(false);
     }
