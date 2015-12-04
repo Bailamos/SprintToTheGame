@@ -41,11 +41,12 @@ public class NetworkManagment : MonoBehaviour {
         Transform panel = GameObject.Find("Canvas").transform.FindChild("Waiting");
         panel.GetComponent<Text>().text = "Dołączył";
         Debug.Log("Przeciwnik dołączył");
-        PhotonView photonView = PhotonView.Get(this);
-        photonView.RPC("Potwierdz", PhotonTargets.Others);
 
         GameObject.Find("Player").GetComponent<whoseTurn>().isMyTurn = true; // Turn belongs to player who connetcted first
         for(int i = 0; i < 5; i++) GameObject.Find("EventSystem").GetComponent<DeckScript>().draftCard();
+
+        PhotonView photonView = PhotonView.Get(this);
+        photonView.RPC("Potwierdz", PhotonTargets.Others);
         //panel.gameObject.SetActive(false);
     }
     [PunRPC]
