@@ -14,6 +14,6 @@ public class whoseTurn : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         if (isMyTurn) this.transform.Find("PlayerPlanel").GetComponent<Image>().color = Color.green;
-        else this.transform.Find("PlayerPlanel").GetComponent<Image>().color = new Color(255,255,255,100);
+        else this.transform.Find("PlayerPlanel").GetComponent<Image>().color = new Color(255,255,255, 100);
     }
 }
