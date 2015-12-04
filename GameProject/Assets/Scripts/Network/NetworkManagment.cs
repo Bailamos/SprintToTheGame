@@ -1,4 +1,6 @@
 ﻿using UnityEngine;
+using UnityEngine.EventSystems;
+using UnityEngine.UI;
 using System.Collections;
 
 public class NetworkManagment : MonoBehaviour {
@@ -28,8 +30,31 @@ public class NetworkManagment : MonoBehaviour {
     void OnJoinedRoom()
     {
         PhotonNetwork.Instantiate("Player", Vector2.zero, Quaternion.identity, 0);
+
+        PhotonView photonView = PhotonView.Get(this);
+        photonView.RPC("Connected", PhotonTargets.Others);
+
+     
     }
 
+    [PunRPC]
+    void Connected()
+    {
+        Transform panel = GameObject.Find("Canvas").transform.FindChild("Waiting");
+        panel.GetComponent<Text>().text = "Dołączył";
+        Debug.Log("Przeciwnik dołączył");
+        PhotonView photonView = PhotonView.Get(this);
+        photonView.RPC("Potwierdz", PhotonTargets.Others);
+        panel.gameObject.SetActive(false);
+    }
+    [PunRPC]
+    void Potwierdz()
+    {
+        Transform panel = GameObject.Find("Canvas").transform.FindChild("Waiting");
+        panel.GetComponent<Text>().text = "Potwierdzam";
+        Debug.Log("Przeciwnik dołączył");
+        panel.gameObject.SetActive(false);
+    }
     
 
 
