@@ -24,6 +24,8 @@ public class Statistics : MonoBehaviour {
         if (!isAlive)
         {
             Debug.Log("Niszcze: " + this.gameObject.name);
+            GameObject gameWorld = GameObject.Find("GameWorld");
+            gameWorld.GetComponent<AssignID>().allCards.Remove(this.gameObject);
             Destroy(this.gameObject);
         }
     }

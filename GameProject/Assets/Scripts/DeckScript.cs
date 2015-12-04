@@ -32,9 +32,6 @@ public class DeckScript : MonoBehaviour
                 GameObject nCard = (GameObject)Instantiate(b);
                 initCard(panel, nCard,a,1,1,1,false,"Archers");
 
-                var gameWorld = GameObject.Find("GameWorld");
-                nCard.GetComponent<Properties>().CardId = gameWorld.GetComponent<AssignID>().giveID();
-
                 GetComponent<LoadCards>().Deck.RemoveAt(0);
 
                 PhotonView photonView = PhotonView.Get(this);
@@ -44,14 +41,9 @@ public class DeckScript : MonoBehaviour
             {
                 Debug.Log("KONIEC GRY, PRZEGRAŁEŚ");
             }
-            
-           
 
             //Debug.Log("Dodaje karte " + nCard.GetComponent<Statistics>().hp);
         }
-
-
-
     }
 
 
@@ -119,6 +111,15 @@ public class DeckScript : MonoBehaviour
              Sprite s = Sprite.Create(texture, new Rect(0, 0, texture.width, texture.height), new Vector2(0.5f, 0.5f));
              nCard.transform.Find("CardImage").GetComponent<Image>().sprite = s;
          }
-     }
+
+        GameObject panelToReturn = GameObject.Find("Hand");
+        nCard.GetComponent<Card>().parentToReturnTo = panelToReturn.transform;
+
+        // Assign ID to card
+        var gameWorld = GameObject.Find("GameWorld"); 
+        nCard.GetComponent<Properties>().CardId = gameWorld.GetComponent<AssignID>().giveID();
+        gameWorld.GetComponent<AssignID>().allCards.Add(nCard);
+        Debug.Log("Nazwa: " + nCard.name + " Id: " + nCard.GetComponent<Properties>().CardId);
+    }
 }
 

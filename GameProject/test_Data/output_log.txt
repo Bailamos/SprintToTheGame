@@ -23,19 +23,147 @@ Loading C:\Users\Maciek\Desktop\CompetitonGame2\GameProject\test_Data\Managed\Un
 Platform assembly: C:\Users\Maciek\Desktop\CompetitonGame2\GameProject\test_Data\Managed\UnityEngine.UI.dll (this message is harmless)
 Loading C:\Users\Maciek\Desktop\CompetitonGame2\GameProject\test_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
 Platform assembly: C:\Users\Maciek\Desktop\CompetitonGame2\GameProject\test_Data\Managed\System.Core.dll (this message is harmless)
-- Completed reload, in  0.066 seconds
+- Completed reload, in  0.077 seconds
 desktop: 1920x1080 60Hz; virtual: 1920x1080 at 0,0
 <RI> Initializing input.
 <RI> Input initialized.
 <RI> Initialized touch support.
 Platform assembly: C:\Users\Maciek\Desktop\CompetitonGame2\GameProject\test_Data\Managed\System.dll (this message is harmless)
 Setting up 2 worker threads for Enlighten.
-  Thread -> id: 2494 -> priority: 1 
-  Thread -> id: 2d14 -> priority: 1 
+  Thread -> id: 2b2c -> priority: 1 
+  Thread -> id: 4614 -> priority: 1 
 Unloading 3 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 5.064302 ms
+UnloadTime: 6.967147 ms
 
-Unloading 2 unused Assets to reduce memory usage. Loaded Objects now: 725.
-Total: 0.584988 ms (FindLiveObjects: 0.104962 ms CreateObjectMapping: 0.031721 ms MarkObjects: 0.441307 ms  DeleteObjects: 0.006064 ms)
+Unloading 2 unused Assets to reduce memory usage. Loaded Objects now: 556.
+Total: 0.645633 ms (FindLiveObjects: 0.107761 ms CreateObjectMapping: 0.051781 ms MarkObjects: 0.477227 ms  DeleteObjects: 0.007463 ms)
 
 Platform assembly: C:\Users\Maciek\Desktop\CompetitonGame2\GameProject\test_Data\Managed\System.Xml.dll (this message is harmless)
+Drafting Card
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+Nazwa: PomyslKarty(Clone) Id: 1
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+Drafting Card
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+Nazwa: PomyslKarty(Clone) Id: 2
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+ChatMessage jup and jup!
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+Adding +1 to all of Mana !
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+ChatMessage jup and jup!
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+Adding +1 to all of Mana !
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+ChatMessage jup and jup!
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+Adding +1 to all of Mana !
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+ChatMessage jup and jup!
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+Adding +1 to all of Mana !
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+Nazwa: PomyslKarty(Clone) Id: 3
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+Nazwa: PomyslKarty(Clone) Id: 4
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+Nazwa: PomyslKarty(Clone) Id: 5
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+Nazwa: PomyslKarty(Clone) Id: 6
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+ChatMessage jup and jup!
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+ChatMessage jup and jup!
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+ChatMessage jup and jup!
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+ChatMessage jup and jup!
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+Walka: Atakujacy---> PomyslKarty(Clone) Target---> PomyslKarty(Clone)
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+Illegal view ID:0 method: SendAttack GO:PomyslKarty(Clone)
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+ChatMessage jup and jup!
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+Adding +1 to all of Mana !
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+ChatMessage jup and jup!
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+Adding +1 to all of Mana !
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+ChatMessage jup and jup!
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+ChatMessage jup and jup!
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+Nazwa: PomyslKarty(Clone) Id: 7
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+Nazwa: PomyslKarty(Clone) Id: 8
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+Walka: Atakujacy---> PomyslKarty(Clone) Target---> PomyslKarty(Clone)
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+Illegal view ID:0 method: SendAttack GO:PomyslKarty(Clone)
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+

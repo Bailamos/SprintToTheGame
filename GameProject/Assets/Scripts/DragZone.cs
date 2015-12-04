@@ -24,6 +24,9 @@ public class DragZone : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
                 {
                     drainResources(player.getResources(), d.getResources());
                     d.parentToReturnTo = this.transform;
+
+                    PhotonView photonView = PhotonView.Get(this);
+                    photonView.RPC("ChangeCardParent", PhotonTargets.Others, this.name, d.GetComponent<Properties>().CardId);
                 }
         }
     }
@@ -31,13 +34,8 @@ public class DragZone : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
     public bool checkIfEnoughResources(CardResources player, CardResources karta)
     {
         if (player.like >= karta.like && player.snap >= karta.snap && player.tweet >= karta.tweet)
-        {
             return true;
-        }
-        else
-        {
-            return false;
-        }
+        return false;
     }
     public void drainResources(CardResources player, CardResources karta)
     {
@@ -54,5 +52,16 @@ public class DragZone : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
     public void OnPointerExit(PointerEventData eventData)
     {
         //Debug.Log(gameObject.name);
+    }
+
+    [PunRPC]
+    void ChangeCardParent(string panelName, int cardID)
+    {
+        panelName = "Enemies" + panelName;
+        var gameWorld = GameObject.Find("GameWorld");
+        GameObject panel = GameObject.Find(panelName);
+
+        GameObject x = gameWorld.GetComponent<AssignID>().allCards.Find(card => card.GetComponent<Properties>().CardId.Equals(cardID));
+        x.transform.SetParent(panel.transform, true);
     }
 }

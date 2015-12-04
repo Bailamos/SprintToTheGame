@@ -7,7 +7,7 @@ using System.Collections.Generic;
 public class DropCard : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IDropHandler
 {
     //HetlthScript zycie;
-    public int numberOfAttack; // number of Cards witch attack is already planned
+   // public int numberOfAttack; // number of Cards witch attack is already planned
 
     public void OnDrop(PointerEventData eventData)
     {
@@ -19,8 +19,19 @@ public class DropCard : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 
         if (isAttackPossible(Attacker, Target))
         {
+            PhotonView photonView = PhotonView.Get(this);
+            photonView.RPC("SendAttack", PhotonTargets.Others, Attacker.GetComponent<Properties>().CardId, Target.GetComponent<Properties>().CardId);
             gameWorld.GetComponent<AttackRound>().addAttack(Attacker.gameObject, Target.gameObject); // add new planned Attack when player drop his Card on enemy Card
         }
+    }
+
+    [PunRPC]
+    void SendAttack(int attackerID, int targetID)
+    {
+        GameObject gameWorld = GameObject.Find("GameWorld");
+        GameObject Attacker = gameWorld.GetComponent<AssignID>().allCards.Find(card => card.GetComponent<Properties>().CardId.Equals(attackerID));
+        GameObject Target = gameWorld.GetComponent<AssignID>().allCards.Find(card => card.GetComponent<Properties>().CardId.Equals(targetID));
+        gameWorld.GetComponent<AttackRound>().addAttack(Attacker.gameObject, Target.gameObject);
     }
 
     public void OnPointerEnter(PointerEventData eventData)
