@@ -70,6 +70,7 @@ public class DeckScript : MonoBehaviour
     public void changeDrafetedState()
     {
         GameObject.Find("Gracz").GetComponent<Player>().alreadyDraftedCard = true;
+        GameObject.Find("DraftButton").transform.GetComponent<Image>().color = Color.black;
     }
 
     [PunRPC]

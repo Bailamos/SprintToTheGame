@@ -18,11 +18,11 @@ public class Player : MonoBehaviour {
 
     public void addMana()
     {
-        zasoby.like += 2;
-        zasoby.tweet += 2;
-        zasoby.snap += 2;
+        zasoby.like += 3;
+        zasoby.tweet += 3;
+        zasoby.snap += 3;
         PhotonView photonView = PhotonView.Get(this);
-        photonView.RPC("updateMana", PhotonTargets.Others, 2, 2 ,2);
+        photonView.RPC("updateMana", PhotonTargets.Others, 3, 3 ,3);
     }
 
     public CardResources getResources()

@@ -25,6 +25,6 @@ public class PlayerStats : MonoBehaviour {
     }
 
     void Update () {
-        textStats.text = "Life: " + player.GetComponent<Statistics>().hp.ToString() + "\nLikes: " + zasoby.like.ToString() + "\nTweets: " + zasoby.tweet.ToString() + "\nSnaps: " + zasoby.snap.ToString();
+        textStats.text = "Zycie: " + player.GetComponent<Statistics>().hp.ToString() + "\nLikes: " + zasoby.like.ToString() + "\nTweets: " + zasoby.tweet.ToString() + "\nSnaps: " + zasoby.snap.ToString();
     }
 }

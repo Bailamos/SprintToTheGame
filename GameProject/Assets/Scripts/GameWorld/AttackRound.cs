@@ -43,7 +43,7 @@ public class AttackRound : MonoBehaviour
             photonView.RPC("sendStartAttack", PhotonTargets.Others);
             attack();
             GameObject.Find("Player").GetComponent<whoseTurn>().isMyTurn = false;
-            GameObject.Find("Gracz").GetComponent<Player>().alreadyDraftedCard = false;
+            GameObject.Find("Gracz").GetComponent<Player>().alreadyDraftedCard = false; 
 
             Transform panel = GameObject.Find("Canvas").transform.FindChild("Waiting");
             panel.GetComponent<Text>().text = "TURA PRZECIWNIKA";
@@ -62,6 +62,7 @@ public class AttackRound : MonoBehaviour
     {
         attack();
         GameObject.Find("Player").GetComponent<whoseTurn>().isMyTurn = true;
+        GameObject.Find("DraftButton").transform.GetComponent<Image>().color = Color.green;
         Transform panel = GameObject.Find("Canvas").transform.FindChild("Waiting");
         panel.GetComponent<Text>().text = "TWOJA TURA";
     }
@@ -75,8 +76,11 @@ public class AttackRound : MonoBehaviour
             bool destroyBool = zycieTarget.attack(attck.Attacker.GetComponent<Statistics>().atk);
             if (destroyBool) zycieTarget.isAlive = false;
 
-            bool destroyBool2 = zycieAttacker.attack(attck.Target.GetComponent<Statistics>().atk);
-            if (destroyBool2) zycieAttacker.isAlive = false;
+            if (!(attck.Attacker.GetComponent<Properties>().type == Properties.typy.Archers && attck.Target.GetComponent<Properties>().type == Properties.typy.Melee))
+            {
+                bool destroyBool2 = zycieAttacker.attack(attck.Target.GetComponent<Statistics>().atk);
+                if (destroyBool2) zycieAttacker.isAlive = false;
+            }
 
             attck.Attacker.transform.GetComponent<Image>().color = Color.black;
         }

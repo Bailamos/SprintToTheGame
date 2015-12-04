@@ -19,107 +19,22 @@ Loading C:\Users\Maciek\Desktop\CompetitonGame2\GameProject\test_Data\Managed\Un
 Platform assembly: C:\Users\Maciek\Desktop\CompetitonGame2\GameProject\test_Data\Managed\Photon3Unity3D.dll (this message is harmless)
 Loading C:\Users\Maciek\Desktop\CompetitonGame2\GameProject\test_Data\Managed\Photon3Unity3D.dll into Unity Child Domain
 Platform assembly: C:\Users\Maciek\Desktop\CompetitonGame2\GameProject\test_Data\Managed\System.Core.dll (this message is harmless)
-- Completed reload, in  0.058 seconds
-desktop: 1920x1080 60Hz; virtual: 1920x1080 at 0,0
-<RI> Initializing input.
-<RI> Input initialized.
-Initialize engine version: 5.2.3f1 (f3d16a1fa2dd)
-GfxDevice: creating device client; threaded=1
-Direct3D:
-    Version:  Direct3D 11.0 [level 10.1]
-    Renderer: Intel(R) HD Graphics Family (ID=0x116)
-    Vendor:   Intel
-    VRAM:     128 MB
-Begin MonoManager ReloadAssembly
-Platform assembly: C:\Users\Maciek\Desktop\CompetitonGame2\GameProject\test_Data\Managed\UnityEngine.dll (this message is harmless)
-Loading C:\Users\Maciek\Desktop\CompetitonGame2\GameProject\test_Data\Managed\UnityEngine.dll into Unity Child Domain
-Platform assembly: C:\Users\Maciek\Desktop\CompetitonGame2\GameProject\test_Data\Managed\Assembly-CSharp-firstpass.dll (this message is harmless)
-Loading C:\Users\Maciek\Desktop\CompetitonGame2\GameProject\test_Data\Managed\Assembly-CSharp-firstpass.dll into Unity Child Domain
-Platform assembly: C:\Users\Maciek\Desktop\CompetitonGame2\GameProject\test_Data\Managed\Assembly-CSharp.dll (this message is harmless)
-Loading C:\Users\Maciek\Desktop\CompetitonGame2\GameProject\test_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
-Platform assembly: C:\Users\Maciek\Desktop\CompetitonGame2\GameProject\test_Data\Managed\UnityEngine.UI.dll (this message is harmless)
-Loading C:\Users\Maciek\Desktop\CompetitonGame2\GameProject\test_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
-Platform assembly: C:\Users\Maciek\Desktop\CompetitonGame2\GameProject\test_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
-Loading C:\Users\Maciek\Desktop\CompetitonGame2\GameProject\test_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
-Platform assembly: C:\Users\Maciek\Desktop\CompetitonGame2\GameProject\test_Data\Managed\Photon3Unity3D.dll (this message is harmless)
-Loading C:\Users\Maciek\Desktop\CompetitonGame2\GameProject\test_Data\Managed\Photon3Unity3D.dll into Unity Child Domain
-Platform assembly: C:\Users\Maciek\Desktop\CompetitonGame2\GameProject\test_Data\Managed\System.Core.dll (this message is harmless)
-- Completed reload, in  0.053 seconds
+- Completed reload, in  0.074 seconds
 desktop: 1920x1080 60Hz; virtual: 1920x1080 at 0,0
 <RI> Initializing input.
 <RI> Input initialized.
 <RI> Initialized touch support.
-<RI> Initialized touch support.
 Platform assembly: C:\Users\Maciek\Desktop\CompetitonGame2\GameProject\test_Data\Managed\System.dll (this message is harmless)
 Setting up 2 worker threads for Enlighten.
-  Thread -> id: 1de8 -> priority: 1 
-  Thread -> id: 239c -> priority: 1 
+  Thread -> id: 341c -> priority: 1 
+  Thread -> id: 3bb0 -> priority: 1 
 Unloading 3 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 5.626041 ms
+UnloadTime: 6.990566 ms
 
 Unloading 2 unused Assets to reduce memory usage. Loaded Objects now: 584.
-Total: 0.549075 ms (FindLiveObjects: 0.057380 ms CreateObjectMapping: 0.055047 ms MarkObjects: 0.431049 ms  DeleteObjects: 0.005131 ms)
+Total: 1.108880 ms (FindLiveObjects: 0.108695 ms CreateObjectMapping: 0.044317 ms MarkObjects: 0.943271 ms  DeleteObjects: 0.009796 ms)
 
 Platform assembly: C:\Users\Maciek\Desktop\CompetitonGame2\GameProject\test_Data\Managed\System.Xml.dll (this message is harmless)
-Platform assembly: C:\Users\Maciek\Desktop\CompetitonGame2\GameProject\test_Data\Managed\System.dll (this message is harmless)
-Operation failed: OperationResponse 225: ReturnCode: 32760 (No match found). Parameters: {}
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
-
-Setting up 2 worker threads for Enlighten.
-  Thread -> id: 2f74 -> priority: 1 
-  Thread -> id: 3838 -> priority: 1 
-Unloading 3 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 5.708146 ms
-
-Unloading 2 unused Assets to reduce memory usage. Loaded Objects now: 584.
-Total: 0.511755 ms (FindLiveObjects: 0.043851 ms CreateObjectMapping: 0.031722 ms MarkObjects: 0.430116 ms  DeleteObjects: 0.005131 ms)
-
-Platform assembly: C:\Users\Maciek\Desktop\CompetitonGame2\GameProject\test_Data\Managed\System.Xml.dll (this message is harmless)
-Przeciwnik dołączył
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
-
-Drafting Card
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
-
-Nazwa: PomyslKarty(Clone) Id: 1
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
-
-Drafting Card
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
-
-Nazwa: PomyslKarty(Clone) Id: 2
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
-
-Drafting Card
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
-
-Nazwa: PomyslKarty(Clone) Id: 3
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
-
-Drafting Card
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
-
-Nazwa: PomyslKarty(Clone) Id: 4
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
-
-Drafting Card
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
-
-Nazwa: PomyslKarty(Clone) Id: 5
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
-
 Nazwa: PomyslKarty(Clone) Id: 1
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
@@ -184,34 +99,6 @@ Przeciwnik dołączył
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
 
-Nazwa: PomyslKarty(Clone) Id: 6
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
-
-Nazwa: PomyslKarty(Clone) Id: 7
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
-
-Nazwa: PomyslKarty(Clone) Id: 8
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
-
-Nazwa: PomyslKarty(Clone) Id: 9
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
-
-Nazwa: PomyslKarty(Clone) Id: 10
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
-
-Drafting Card
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
-
-Nazwa: PomyslKarty(Clone) Id: 11
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
-
 Nazwa: PomyslKarty(Clone) Id: 11
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
@@ -220,15 +107,11 @@ dasd
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
 
-Drafting Card
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
-
 Nazwa: PomyslKarty(Clone) Id: 12
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
 
-Nazwa: PomyslKarty(Clone) Id: 12
+Walka: Atakujacy---> PomyslKarty(Clone) Target---> PomyslKarty(Clone)
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
 
@@ -236,59 +119,11 @@ dasd
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
 
-Drafting Card
+Niszcze: PomyslKarty(Clone)
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
 
-Nazwa: PomyslKarty(Clone) Id: 13
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
-
-Nazwa: PomyslKarty(Clone) Id: 13
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
-
-dasd
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
-
-Drafting Card
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
-
-Nazwa: PomyslKarty(Clone) Id: 14
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
-
-Nazwa: PomyslKarty(Clone) Id: 14
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
-
-dasd
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
-
-dasd
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
-
-Drafting Card
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
-
-Nazwa: PomyslKarty(Clone) Id: 15
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
-
-Nazwa: PomyslKarty(Clone) Id: 15
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
-
-dasd
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
-
-dasd
+Niszcze: PomyslKarty(Clone)
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
 

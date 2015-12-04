@@ -43,7 +43,8 @@ public class NetworkManagment : MonoBehaviour {
         Debug.Log("Przeciwnik dołączył");
 
         GameObject.Find("Player").GetComponent<whoseTurn>().isMyTurn = true; // Turn belongs to player who connetcted first
-        for(int i = 0; i < 5; i++) GameObject.Find("EventSystem").GetComponent<DeckScript>().draftCard();
+        GameObject.Find("DraftButton").transform.GetComponent<Image>().color = Color.green;
+        for (int i = 0; i < 5; i++) GameObject.Find("EventSystem").GetComponent<DeckScript>().draftCard();
 
         PhotonView photonView = PhotonView.Get(this);
         photonView.RPC("Potwierdz", PhotonTargets.Others);
