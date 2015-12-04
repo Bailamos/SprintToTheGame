@@ -1,0 +1,186 @@
+<Cards>
+	<Card>
+		<Title>ZwyklyUzytkownik</Title>
+		<Atak>1</Atak>
+		<Obrona>1</Obrona>
+		<Like>1</Like>
+		<Snap>0</Snap>
+		<Tweet>0</Tweet>
+		<Opis>Typowy uzytkownik serwisow, nie za duzo udostepnia, nie za duzo czyta</Opis>
+		<Typ>Melee</Typ>
+	</Card>
+	<Card>
+		<Title>AspirujacyFotograf</Title>
+		<Atak>2</Atak>
+		<Obrona>2</Obrona>
+		<Like>1</Like>
+		<Snap>1</Snap>
+		<Tweet>0</Tweet>
+		<Opis>Zalozyl sobie konto na snapchacie i fejsbuku tylko po to aby dzielic sie swoimi watpliwej jakosci zdjeciami</Opis>
+		<Typ>Archer</Typ>
+	</Card>
+	<Card>
+		<Title>Hejter</Title>
+		<Atak>3</Atak>
+		<Obrona>1</Obrona>
+		<Like>1</Like>
+		<Snap>1</Snap>
+		<Tweet>1</Tweet>
+		<Opis>Posiada konto we wszystkich znanych sobie portalach po to aby czerpac przyjemnosc z obrazania innych</Opis>
+		<Typ>Melee</Typ>
+	</Card>
+
+	<Card>
+		<Title>ZmieniaczStatusow</Title>
+		<Atak>3</Atak>
+		<Obrona>3</Obrona>
+		<Like>3</Like>
+		<Snap>2</Snap>
+		<Tweet>0</Tweet>
+		<Opis>Informuje wszystkim o tym co sie dzieje w jego zyciu. Zrobil sobie na obiad kanapke? Zaraz sie o tym dowiesz</Opis>
+		<Typ>Melee</Typ>
+	</Card>	
+	<Card>
+		<Title>Kucharz</Title>
+		<Atak>1</Atak>
+		<Obrona>5</Obrona>
+		<Like>2</Like>
+		<Snap>2</Snap>
+		<Tweet>0</Tweet>
+		<Opis>Zamiast jak normalny czlowiek zjesc swoj posilek zawsze najpierw musi sie podzielic jego zdjeciem wszystkimi</Opis>
+		<Typ>Melee</Typ>
+	</Card>
+	<Card>
+		<Title>PannaZFejsa</Title>
+		<Atak>5</Atak>
+		<Obrona>5</Obrona>
+		<Like>5</Like>
+		<Snap>0</Snap>
+		<Tweet>0</Tweet>
+		<Opis>Typowa paniusia z fejsa, zawsze dostaje najwiecej lajkow nie wazne co wstawi</Opis>
+		<Typ>Melee</Typ>
+		
+	</Card>
+	<Card>
+		<Title>Artysta</Title>
+		<Atak>3</Atak>
+		<Obrona>1</Obrona>
+		<Like>1</Like>
+		<Snap>1</Snap>
+		<Tweet>1</Tweet>
+		<Opis>Artysta czujacy ogromna potrzebe dzielenia sie swoimi dzielami. Wyjatkowo nieodporny na krytyke</Opis>
+		<Typ>Melee</Typ>
+		
+	</Card>
+	<Card>
+		<Title>ZakochanaPara</Title>
+		<Atak>5</Atak>
+		<Obrona>5</Obrona>
+		<Like>3</Like>
+		<Snap>3</Snap>
+		<Tweet>0</Tweet>
+		<Opis>Po co komu osobne profile? Lepiej miec jeden.</Opis>
+		<Typ>Archer</Typ>
+		
+	</Card>
+	<Card>
+		<Title>Polityk</Title>
+		<Atak>2</Atak>
+		<Obrona>3</Obrona>
+		<Like>2</Like>
+		<Snap>2</Snap>
+		<Tweet>2</Tweet>
+		<Opis>Wydazylo sie cos w swiecie polityki? Polityk zaraz cie o tym poinformuje, czy tego chcesz czy nie!</Opis>
+		<Typ>Melee</Typ>
+		
+	</Card>
+	<Card>
+		<Title>CzlowiekIncognito</Title>
+		<Atak>2</Atak>
+		<Obrona>2</Obrona>
+		<Like>1</Like>
+		<Snap>1</Snap>
+		<Tweet>1</Tweet>
+		<Opis>Pomimo, ze posiada konto na kazdym portalu to i tak zadnego nie uzywa</Opis>
+		<Typ>Melee</Typ>
+		
+	</Card>
+	<Card>
+		<Title>CzlowiekWydarzenie</Title>
+		<Atak>3</Atak>
+		<Obrona>3</Obrona>
+		<Like>2</Like>
+		<Snap>1</Snap>
+		<Tweet>2</Tweet>
+		<Opis>Jakies wydarzenie odbywa sie 3 tysiace kilometrow dalej? Nie ma znaczenia, czlowiekWydarzenie i tak wezmie w nim udzial i przy okazji Cie zaprosi</Opis>
+		<Typ>Melee</Typ>
+		
+	</Card>
+	<Card>
+		<Title>Biegacz</Title>
+		<Atak>4</Atak>
+		<Obrona>1</Obrona>
+		<Like>2</Like>
+		<Snap>0</Snap>
+		<Tweet>0</Tweet>
+		<Opis>Biegacz, ktory zaczal biegac miesiac temu, koniecznie musi miec podlaczone endo do swojego profilu aby kazdy o tym wiedzial!</Opis>
+		<Typ>Melee</Typ>
+		
+	</Card>
+	<Card>
+		<Title>ProfilkaZwierzatka</Title>
+		<Atak>2</Atak>
+		<Obrona>2</Obrona>
+		<Like>1</Like>
+		<Snap>1</Snap>
+		<Tweet>1</Tweet>
+		<Opis>Na swoich profilach wrzuca tylko zdjecia zwierzat, nikt nie wie jak wyglada naprawde</Opis>
+		<Typ>Melee</Typ>
+		
+	</Card>
+	<Card>
+		<Title>Stalker</Title>
+		<Atak>0</Atak>
+		<Obrona>5</Obrona>
+		<Like>2</Like>
+		<Snap>2</Snap>
+		<Tweet>1</Tweet>
+		<Opis>Nigdy nic nie pisze,nigdy nic nie lajkuje, ale wie wszystko o wszystkich</Opis>
+		<Typ>Melee</Typ>
+		
+	</Card>
+	<Card>
+		<Title>InternetowyNapinacz</Title>
+		<Atak>4</Atak>
+		<Obrona>1</Obrona>
+		<Like>1</Like>
+		<Snap>2</Snap>
+		<Tweet>1</Tweet>
+		<Opis>Zawsze wszystkich obraza, ale w prawdziwym swiecie jest tylko zwyklym lamusem</Opis>
+		<Typ>Archer</Typ>
+		
+	</Card>
+	<Card>
+		<Title>DzieckoIncognito</Title>
+		<Atak>3</Atak>
+		<Obrona>1</Obrona>
+		<Like>3</Like>
+		<Snap>0</Snap>
+		<Tweet>3</Tweet>
+		<Opis>Dziecko, ktore wstydzi sie bycia dzieckiem i podaje sie za doroslego</Opis>
+		<Typ>Archer</Typ>
+		
+	</Card>
+	<Card>
+		<Title>Gracz</Title>
+		<Atak>2</Atak>
+		<Obrona>1</Obrona>
+		<Like>1</Like>
+		<Snap>0</Snap>
+		<Tweet>0</Tweet>
+		<Opis>Gra we wszystko na fejsie i zawsze musi Ciebie zaprosic chociaz nigdy jeszcze nie zaakceptowales</Opis>
+		<Typ>Archer</Typ>
+		
+	</Card>
+
+</Cards>

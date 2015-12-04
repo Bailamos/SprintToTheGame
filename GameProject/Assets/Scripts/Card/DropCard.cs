@@ -48,6 +48,11 @@ public class DropCard : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
     {
         if (!(Attacker.parentToReturnTo.Equals(GameObject.Find("Hand").transform)))
         {
+            if (Target.parentToReturnTo.Equals(GameObject.Find("Hand").transform))
+            {
+                Debug.Log("Nie możesz atakować ręki przeciwnika!");
+                return false;
+            }
             if (!(Attacker.properties.type == Properties.typy.Melee && Target.properties.type == Properties.typy.Archers))
             {
                 return true;
