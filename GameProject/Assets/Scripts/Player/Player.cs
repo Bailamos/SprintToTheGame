@@ -20,19 +20,20 @@ public class Player : MonoBehaviour {
             zasoby.tweet += 1;
             zasoby.snap += 1;
             PhotonView photonView = PhotonView.Get(this);
-            photonView.RPC("ChatMessage", PhotonTargets.All, "jup", "and jup!");
+            photonView.RPC("updateMana", PhotonTargets.Others, 1, 1 ,1);
+
             Debug.Log("Adding +1 to all of Mana !");
         }
-  
-    
     }
+
     public CardResources getResources()
     {
         return zasoby;
     }
+
     [PunRPC]
-    void ChatMessage(string a, string b)
+    void updateMana(int l, int s, int t)
     {
-        Debug.Log("ChatMessage " + a + " " + b);
+        GameObject.Find("Enemy").GetComponent<EnemyStats>().addMana(l, s, t);
     }
 }

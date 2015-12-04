@@ -26,9 +26,16 @@ public class DragZone : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
                     d.parentToReturnTo = this.transform;
 
                     PhotonView photonView = PhotonView.Get(this);
+                    photonView.RPC("updateMana", PhotonTargets.Others, d.getResources().like, d.getResources().snap, d.getResources().tweet);
                     photonView.RPC("ChangeCardParent", PhotonTargets.Others, this.name, d.GetComponent<Properties>().CardId);
                 }
         }
+    }
+
+    [PunRPC]
+    void updateMana(int l, int s, int t)
+    {
+        GameObject.Find("Enemy").GetComponent<EnemyStats>().drainMana(l, s, t);
     }
 
     public bool checkIfEnoughResources(CardResources player, CardResources karta)
