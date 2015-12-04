@@ -5,7 +5,7 @@ public class Attack {
 
     public GameObject Attacker;
     public GameObject Target;
-    bool enemyAttack;
+    public bool enemyAttack;
 
     public Attack(GameObject Attck, GameObject Trgt, bool enemyAttk)
     {

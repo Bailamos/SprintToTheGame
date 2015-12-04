@@ -58,10 +58,17 @@ public class Card : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHand
 
     public void OnDrag(PointerEventData eventData)
     {
-        if (properties.isEnemy == false)
+        if (GameObject.Find("Player").GetComponent<whoseTurn>().isMyTurn) // is my Turn ?
         {
-            //Debug.Log("BLADASDSADWE");
-            this.transform.position = Input.mousePosition;
+            if (properties.isEnemy == false)
+            {
+                //Debug.Log("BLADASDSADWE");
+                this.transform.position = Input.mousePosition;
+            }
+        }
+        else
+        {
+            Debug.Log("Nie towja tura !");
         }
     }
 

@@ -35,15 +35,30 @@ public class AttackRound : MonoBehaviour
 
     public void startAttack()
     {
-        PhotonView photonView = PhotonView.Get(this);
-        photonView.RPC("sendStartAttack", PhotonTargets.Others);
-        attack();
+        if (GameObject.Find("Player").GetComponent<whoseTurn>().isMyTurn) // is my Turn ?
+        {
+            PhotonView photonView = PhotonView.Get(this);
+            photonView.RPC("sendStartAttack", PhotonTargets.Others);
+            attack();
+            GameObject.Find("Player").GetComponent<whoseTurn>().isMyTurn = false;
+
+            Transform panel = GameObject.Find("Canvas").transform.FindChild("Waiting");
+            panel.GetComponent<Text>().text = "TURA PRZECIWNIKA";
+        }
+        else
+        {
+            Transform panel = GameObject.Find("Canvas").transform.FindChild("Waiting");
+            panel.GetComponent<Text>().text = "Nie twoja tura !";
+        }
     }
 
     [PunRPC]
     void sendStartAttack()
     {
         attack();
+        GameObject.Find("Player").GetComponent<whoseTurn>().isMyTurn = true;
+        Transform panel = GameObject.Find("Canvas").transform.FindChild("Waiting");
+        panel.GetComponent<Text>().text = "TWOJA TURA";
     }
     private void attack()
     {

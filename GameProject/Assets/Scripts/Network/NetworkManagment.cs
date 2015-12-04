@@ -45,7 +45,9 @@ public class NetworkManagment : MonoBehaviour {
         Debug.Log("Przeciwnik dołączył");
         PhotonView photonView = PhotonView.Get(this);
         photonView.RPC("Potwierdz", PhotonTargets.Others);
-        panel.gameObject.SetActive(false);
+
+        GameObject.Find("Player").GetComponent<whoseTurn>().isMyTurn = true; // Turn belongs to player who connetcted first
+        //panel.gameObject.SetActive(false);
     }
     [PunRPC]
     void Potwierdz()
@@ -53,7 +55,7 @@ public class NetworkManagment : MonoBehaviour {
         Transform panel = GameObject.Find("Canvas").transform.FindChild("Waiting");
         panel.GetComponent<Text>().text = "Potwierdzam";
         Debug.Log("Przeciwnik dołączył");
-        panel.gameObject.SetActive(false);
+        //panel.gameObject.SetActive(false);
     }
     
 

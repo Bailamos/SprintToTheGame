@@ -11,17 +11,25 @@ public class DropCard : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 
     public void OnDrop(PointerEventData eventData)
     {
-        Card Attacker = eventData.pointerDrag.GetComponent<Card>();
-        Card Target = this.GetComponent<Card>();
-
-        Debug.Log("Walka: Atakujacy---> " + Attacker.name + " Target---> " + Target.name);
-        GameObject gameWorld = GameObject.Find("GameWorld");
-
-        if (isAttackPossible(Attacker, Target))
+        if (GameObject.Find("Player").GetComponent<whoseTurn>().isMyTurn) // is my Turn ?
         {
-            PhotonView photonView = PhotonView.Get(this);
-            photonView.RPC("SendAttack", PhotonTargets.Others, Attacker.GetComponent<Properties>().CardId, Target.GetComponent<Properties>().CardId);
-            gameWorld.GetComponent<AttackRound>().addAttack(Attacker.gameObject, Target.gameObject, false); // add new planned Attack when player drop his Card on enemy Card
+            Card Attacker = eventData.pointerDrag.GetComponent<Card>();
+            Card Target = this.GetComponent<Card>();
+
+            Debug.Log("Walka: Atakujacy---> " + Attacker.name + " Target---> " + Target.name);
+            GameObject gameWorld = GameObject.Find("GameWorld");
+
+            if (isAttackPossible(Attacker, Target))
+            {
+                PhotonView photonView = PhotonView.Get(this);
+                photonView.RPC("SendAttack", PhotonTargets.Others, Attacker.GetComponent<Properties>().CardId, Target.GetComponent<Properties>().CardId);
+                gameWorld.GetComponent<AttackRound>().addAttack(Attacker.gameObject, Target.gameObject, false); // add new planned Attack when player drop his Card on enemy Card
+            }
+        }
+        else
+        {
+            Transform panel = GameObject.Find("Canvas").transform.FindChild("Waiting");
+            panel.GetComponent<Text>().text = "Nie twoja tura !";
         }
     }
 

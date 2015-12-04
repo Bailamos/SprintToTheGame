@@ -2,6 +2,7 @@
 using UnityEngine.EventSystems;
 using System.Collections;
 using System;
+using UnityEngine.UI;
 
 public class DragZone : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IDropHandler
 {
@@ -15,20 +16,28 @@ public class DragZone : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 
     public void OnDrop(PointerEventData eventData)
     {
-        d = eventData.pointerDrag.GetComponent<Card>();
-
-        if (this.name != "EnemiesHand" && this.name != "EnemiesArchers" && this.name != "EnemiesMelee")
+        if (GameObject.Find("Player").GetComponent<whoseTurn>().isMyTurn) // is my Turn ?
         {
-            if (this.name == d.getProperties().type.ToString())
-                if (checkIfEnoughResources(player.getResources(), d.getResources()))
-                {
-                    drainResources(player.getResources(), d.getResources());
-                    d.parentToReturnTo = this.transform;
+            d = eventData.pointerDrag.GetComponent<Card>();
 
-                    PhotonView photonView = PhotonView.Get(this);
-                    photonView.RPC("updateMana", PhotonTargets.Others, d.getResources().like, d.getResources().snap, d.getResources().tweet);
-                    photonView.RPC("ChangeCardParent", PhotonTargets.Others, this.name, d.GetComponent<Properties>().CardId);
-                }
+            if (this.name != "EnemiesHand" && this.name != "EnemiesArchers" && this.name != "EnemiesMelee")
+            {
+                if (this.name == d.getProperties().type.ToString())
+                    if (checkIfEnoughResources(player.getResources(), d.getResources()))
+                    {
+                        drainResources(player.getResources(), d.getResources());
+                        d.parentToReturnTo = this.transform;
+
+                        PhotonView photonView = PhotonView.Get(this);
+                        photonView.RPC("updateMana", PhotonTargets.Others, d.getResources().like, d.getResources().snap, d.getResources().tweet);
+                        photonView.RPC("ChangeCardParent", PhotonTargets.Others, this.name, d.GetComponent<Properties>().CardId);
+                    }
+            }
+        }
+        else
+        {
+            Transform panel = GameObject.Find("Canvas").transform.FindChild("Waiting");
+            panel.GetComponent<Text>().text = "Nie twoja tura !";
         }
     }
 
@@ -70,6 +79,7 @@ public class DragZone : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 
         GameObject x = gameWorld.GetComponent<AssignID>().allCards.Find(card => card.GetComponent<Properties>().CardId.Equals(cardID));
         x.transform.SetParent(panel.transform, true);
+        x.GetComponent<Card>().parentToReturnTo = panel.transform;
         x.transform.Find("BackOfCard").gameObject.SetActive(false);
     }
 }

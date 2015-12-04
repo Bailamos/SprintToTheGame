@@ -21,26 +21,34 @@ public class DeckScript : MonoBehaviour
 
     public void draftCard()
     {
-        Debug.Log("Drafting Card");
-
-        var panel = GameObject.Find("Hand");
-        if (panel != null)
+        if (GameObject.Find("Player").GetComponent<whoseTurn>().isMyTurn) // is my Turn ?
         {
-            if (GetComponent<LoadCards>().Deck.Count != 0 )
-            {
-                LoadCards.cardProperties a = GetComponent<LoadCards>().Deck[0];
-                GameObject nCard = (GameObject)PhotonNetwork.Instantiate("PomyslKarty", Vector2.zero, Quaternion.identity,0);
-                initCard(panel, nCard,a,false);
+            Debug.Log("Drafting Card");
 
-                GetComponent<LoadCards>().Deck.RemoveAt(0);
-
-                PhotonView photonView = PhotonView.Get(this);
-                photonView.RPC("AddCard", PhotonTargets.Others, a.nazwa,a.atak,a.obrona,a.like,a.tweet,a.snap,true,a.opis,a.typ);
-            }
-            else
+            var panel = GameObject.Find("Hand");
+            if (panel != null)
             {
-                Debug.Log("KONIEC GRY, PRZEGRAŁEŚ");
+                if (GetComponent<LoadCards>().Deck.Count != 0)
+                {
+                    LoadCards.cardProperties a = GetComponent<LoadCards>().Deck[0];
+                    GameObject nCard = (GameObject)PhotonNetwork.Instantiate("PomyslKarty", Vector2.zero, Quaternion.identity, 0);
+                    initCard(panel, nCard, a, false);
+
+                    GetComponent<LoadCards>().Deck.RemoveAt(0);
+
+                    PhotonView photonView = PhotonView.Get(this);
+                    photonView.RPC("AddCard", PhotonTargets.Others, a.nazwa, a.atak, a.obrona, a.like, a.tweet, a.snap, true, a.opis, a.typ);
+                }
+                else
+                {
+                    Debug.Log("KONIEC GRY, PRZEGRAŁEŚ");
+                }
             }
+        }
+        else
+        {
+            Transform panel = GameObject.Find("Canvas").transform.FindChild("Waiting");
+            panel.GetComponent<Text>().text = "Nie twoja tura !";
         }
     }
 
