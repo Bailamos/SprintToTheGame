@@ -5,15 +5,16 @@ using System.Collections.Generic;
 
 public class AttackRound : MonoBehaviour
 {
-
     public List<Attack> listOfAttacks;
-    int numberOfPanel; // number of Panel in Planned Attacks, which is needed in assigning Fight to Panel
+    //public List<Attack> attacksOnPLayer;
     public List<AttackPanel> panelAttakcs;
-
+    int numberOfPanel; // number of Panel in Planned Attacks, which is needed in assigning Fight to Panel
+    
     void Start()
     {
         listOfAttacks = new List<Attack>();
         panelAttakcs = new List<AttackPanel>();
+        
         numberOfPanel = 1;
     }
 
@@ -37,7 +38,6 @@ public class AttackRound : MonoBehaviour
         PhotonView photonView = PhotonView.Get(this);
         photonView.RPC("sendStartAttack", PhotonTargets.Others);
         attack();
-
     }
 
     [PunRPC]
@@ -55,7 +55,6 @@ public class AttackRound : MonoBehaviour
             if (destroyBool) zycie.isAlive = false;
 
             attck.Attacker.transform.GetComponent<Image>().color = Color.black;
-
         }
 
         listOfAttacks.Clear();
@@ -113,12 +112,17 @@ public class AttackRound : MonoBehaviour
         {
             var card2 = panel.transform.Find("Card2");
             Image TargetImage;
-            Image miniImage2;
-            Debug.Log(card2.name);
-            TargetImage = Target.transform.Find("CardImage").gameObject.GetComponent<Image>();
-            miniImage2 = Instantiate(TargetImage);
-
-
+            if(Target.GetComponent<Statistics>().isCard == true)
+            {
+                TargetImage = Target.transform.Find("CardImage").gameObject.GetComponent<Image>();
+            }
+            else
+            {
+                // TargetImage = Target.transform.Find("EnemyPlayerPlanel").transform.Find("EnemyPlayerImage").gameObject.GetComponent<Image>();
+                TargetImage = GameObject.Find("EnemyPlayerImage").GetComponent<Image>();
+            }
+            
+            Image miniImage2 = Instantiate(TargetImage); ;
             miniImage2.transform.SetParent(card2.transform, false);
 
             children.Clear();

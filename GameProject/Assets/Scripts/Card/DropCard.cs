@@ -51,8 +51,9 @@ public class DropCard : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
             if (!(Attacker.properties.type == Properties.typy.Melee && Target.properties.type == Properties.typy.Archers))
             {
                 return true;
-            }
+            }        
             Debug.Log("Melee nie mogą atakować Archerów!");
+            return false;
         }
         Debug.Log("Nie można atakować z ręki!");
         return false;

@@ -51,7 +51,7 @@ public class LoadCards : MonoBehaviour
             doc.Load(filePath + "\\XML\\karty.xml");
             foreach (XmlNode node in doc.DocumentElement)
             {
-                Deck.Add(new cardProperties(node["Title"].InnerText, node["Atak"].InnerText, node["Obrona"].InnerText, node["Like"].InnerText, node["Snap"].InnerText, node["Tweet"].InnerText, node["Opis"].InnerText, node["Typ"].InnerText));
+                Deck.Add(new cardProperties(node["Title"].InnerText, node["Atak"].InnerText, node["Obrona"].InnerText, node["Like"].InnerText, node["Tweet"].InnerText, node["Snap"].InnerText, node["Opis"].InnerText, node["Typ"].InnerText));
             }
         }
     }

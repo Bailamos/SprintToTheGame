@@ -96,14 +96,14 @@ public class DeckScript : MonoBehaviour
          Text Snap;
          Transform SnapTrans = nCard.transform.Find("BottomPanel").transform.Find("SnapText");
          Snap = SnapTrans.GetComponentInChildren<Text>();
-         Snap.text = nCard.GetComponent<CardResources>().tweet.ToString();
+         Snap.text = nCard.GetComponent<CardResources>().snap.ToString();
 
          Text Tweet;
          Transform TweetTrans = nCard.transform.Find("BottomPanel").transform.Find("TweetText");
          Tweet = TweetTrans.GetComponentInChildren<Text>();
-         Tweet.text = nCard.GetComponent<CardResources>().snap.ToString();
+         Tweet.text = nCard.GetComponent<CardResources>().tweet.ToString();
 
-         nCard.GetComponent<Properties>().description = a.opis + "\n Typ: " + a.typ.ToString();
+        nCard.GetComponent<Properties>().description = a.opis + "\n Typ: " + a.typ.ToString();
         
 
       
