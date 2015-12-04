@@ -21,7 +21,7 @@ public class DropCard : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
         {
             PhotonView photonView = PhotonView.Get(this);
             photonView.RPC("SendAttack", PhotonTargets.Others, Attacker.GetComponent<Properties>().CardId, Target.GetComponent<Properties>().CardId);
-            gameWorld.GetComponent<AttackRound>().addAttack(Attacker.gameObject, Target.gameObject); // add new planned Attack when player drop his Card on enemy Card
+            gameWorld.GetComponent<AttackRound>().addAttack(Attacker.gameObject, Target.gameObject, false); // add new planned Attack when player drop his Card on enemy Card
         }
     }
 
@@ -31,7 +31,7 @@ public class DropCard : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
         GameObject gameWorld = GameObject.Find("GameWorld");
         GameObject Attacker = gameWorld.GetComponent<AssignID>().allCards.Find(card => card.GetComponent<Properties>().CardId.Equals(attackerID));
         GameObject Target = gameWorld.GetComponent<AssignID>().allCards.Find(card => card.GetComponent<Properties>().CardId.Equals(targetID));
-        gameWorld.GetComponent<AttackRound>().addAttack(Attacker.gameObject, Target.gameObject);
+        gameWorld.GetComponent<AttackRound>().addAttack(Attacker.gameObject, Target.gameObject, true);
     }
 
     public void OnPointerEnter(PointerEventData eventData)

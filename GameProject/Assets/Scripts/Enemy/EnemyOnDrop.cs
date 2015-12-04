@@ -18,7 +18,7 @@ public class EnemyOnDrop : MonoBehaviour, IDropHandler
             GameObject gameWorld = GameObject.Find("GameWorld");
             PhotonView photonView = PhotonView.Get(this);
             photonView.RPC("SendAttack", PhotonTargets.Others, Attacker.GetComponent<Properties>().CardId);
-            gameWorld.GetComponent<AttackRound>().addAttack(Attacker.gameObject, Target.gameObject); // add new planned Attack when player drop his Card on enemy Card
+            gameWorld.GetComponent<AttackRound>().addAttack(Attacker.gameObject, Target.gameObject, false); // add new planned Attack when player drop his Card on enemy Card
         }
     }
 
@@ -27,8 +27,8 @@ public class EnemyOnDrop : MonoBehaviour, IDropHandler
     {
         GameObject gameWorld = GameObject.Find("GameWorld");
         GameObject Attacker = gameWorld.GetComponent<AssignID>().allCards.Find(card => card.GetComponent<Properties>().CardId.Equals(attackerID));
-        GameObject Target = GameObject.Find("Enemy").gameObject;
-        gameWorld.GetComponent<AttackRound>().addAttack(Attacker.gameObject, Target.gameObject);
+        GameObject Target = GameObject.Find("Gracz").gameObject;
+        gameWorld.GetComponent<AttackRound>().addAttack(Attacker.gameObject, Target.gameObject, true);
     }
 
     private bool isAttackPossible(GameObject Attacker, GameObject Target)

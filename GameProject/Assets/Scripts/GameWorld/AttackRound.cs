@@ -18,12 +18,12 @@ public class AttackRound : MonoBehaviour
         numberOfPanel = 1;
     }
 
-    public void addAttack(GameObject Attacker, GameObject Target)
+    public void addAttack(GameObject Attacker, GameObject Target, bool enemyAttk)
     {
-        Attack attkTemp = new Attack(Attacker, Target);
+        Attack attkTemp = new Attack(Attacker, Target, enemyAttk);
         if (listOfAttacks.Find(e => e.Attacker.Equals(Attacker)) == null)
         {
-            setAttackImages(Attacker, Target);
+            setAttackImages(Attacker, Target, enemyAttk);
             listOfAttacks.Add(attkTemp);
             Attacker.transform.GetComponent<Image>().color = Color.red;
         }
@@ -80,7 +80,7 @@ public class AttackRound : MonoBehaviour
         }
     }
 
-    private void setAttackImages(GameObject Attacker, GameObject Target)
+    private void setAttackImages(GameObject Attacker, GameObject Target, bool enemyAttk)
     {
         bool isTargetUnderAttack = false;
         GameObject panel;
@@ -117,9 +117,9 @@ public class AttackRound : MonoBehaviour
                 TargetImage = Target.transform.Find("CardImage").gameObject.GetComponent<Image>();
             }
             else
-            {
-                // TargetImage = Target.transform.Find("EnemyPlayerPlanel").transform.Find("EnemyPlayerImage").gameObject.GetComponent<Image>();
-                TargetImage = GameObject.Find("EnemyPlayerImage").GetComponent<Image>();
+            {  
+                if(enemyAttk) TargetImage = GameObject.Find("PlayerImage").GetComponent<Image>();
+                else TargetImage = GameObject.Find("EnemyPlayerImage").GetComponent<Image>();
             }
             
             Image miniImage2 = Instantiate(TargetImage); ;
